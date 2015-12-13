@@ -1,0 +1,585 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E8ABD8031C14F6DA00CAEF69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ABD8021C14F6DA00CAEF69 /* AppDelegate.swift */; };
+		E8ABD8051C14F6DA00CAEF69 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ABD8041C14F6DA00CAEF69 /* ViewController.swift */; };
+		E8ABD8081C14F6DA00CAEF69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8ABD8061C14F6DA00CAEF69 /* Main.storyboard */; };
+		E8ABD80A1C14F6DA00CAEF69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8ABD8091C14F6DA00CAEF69 /* Assets.xcassets */; };
+		E8ABD80D1C14F6DA00CAEF69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8ABD80B1C14F6DA00CAEF69 /* LaunchScreen.storyboard */; };
+		E8ABD8181C14F6DA00CAEF69 /* mb_1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ABD8171C14F6DA00CAEF69 /* mb_1Tests.swift */; };
+		E8ABD8231C14F6DA00CAEF69 /* mb_1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ABD8221C14F6DA00CAEF69 /* mb_1UITests.swift */; };
+		E8ABD8331C14F70600CAEF69 /* ObjectiveLibModbus.m in Sources */ = {isa = PBXBuildFile; fileRef = E8ABD8321C14F70600CAEF69 /* ObjectiveLibModbus.m */; };
+		E8ABD8401C14F71F00CAEF69 /* modbus-data.c in Sources */ = {isa = PBXBuildFile; fileRef = E8ABD8351C14F71F00CAEF69 /* modbus-data.c */; };
+		E8ABD8411C14F71F00CAEF69 /* modbus-rtu.c in Sources */ = {isa = PBXBuildFile; fileRef = E8ABD8381C14F71F00CAEF69 /* modbus-rtu.c */; };
+		E8ABD8421C14F71F00CAEF69 /* modbus-tcp.c in Sources */ = {isa = PBXBuildFile; fileRef = E8ABD83B1C14F71F00CAEF69 /* modbus-tcp.c */; };
+		E8ABD8431C14F71F00CAEF69 /* modbus.c in Sources */ = {isa = PBXBuildFile; fileRef = E8ABD83E1C14F71F00CAEF69 /* modbus.c */; };
+		E8F0827A1C1B796D0015143E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F082791C1B796D0015143E /* SettingsViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E8ABD8141C14F6DA00CAEF69 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E8ABD7F71C14F6DA00CAEF69 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E8ABD7FE1C14F6DA00CAEF69;
+			remoteInfo = mb_1;
+		};
+		E8ABD81F1C14F6DA00CAEF69 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E8ABD7F71C14F6DA00CAEF69 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E8ABD7FE1C14F6DA00CAEF69;
+			remoteInfo = mb_1;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E8ABD7FF1C14F6DA00CAEF69 /* mb_1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mb_1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8ABD8021C14F6DA00CAEF69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E8ABD8041C14F6DA00CAEF69 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E8ABD8071C14F6DA00CAEF69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E8ABD8091C14F6DA00CAEF69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E8ABD80C1C14F6DA00CAEF69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E8ABD80E1C14F6DA00CAEF69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8ABD8131C14F6DA00CAEF69 /* mb_1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mb_1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8ABD8171C14F6DA00CAEF69 /* mb_1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mb_1Tests.swift; sourceTree = "<group>"; };
+		E8ABD8191C14F6DA00CAEF69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8ABD81E1C14F6DA00CAEF69 /* mb_1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mb_1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8ABD8221C14F6DA00CAEF69 /* mb_1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mb_1UITests.swift; sourceTree = "<group>"; };
+		E8ABD8241C14F6DA00CAEF69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8ABD8301C14F70500CAEF69 /* mb_1-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mb_1-Bridging-Header.h"; sourceTree = "<group>"; };
+		E8ABD8311C14F70600CAEF69 /* ObjectiveLibModbus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectiveLibModbus.h; path = "../../../../Downloads/ObjectiveLibModbus-master/ObjectiveLibModbus/ObjectiveLibModbus.h"; sourceTree = "<group>"; };
+		E8ABD8321C14F70600CAEF69 /* ObjectiveLibModbus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjectiveLibModbus.m; path = "../../../../Downloads/ObjectiveLibModbus-master/ObjectiveLibModbus/ObjectiveLibModbus.m"; sourceTree = "<group>"; };
+		E8ABD8341C14F71F00CAEF69 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = config.h; path = "../../../../Downloads/ObjectiveLibModbus-master/Vendor/libmodbus/config.h"; sourceTree = "<group>"; };
+		E8ABD8351C14F71F00CAEF69 /* modbus-data.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "modbus-data.c"; path = "../../../../Downloads/ObjectiveLibModbus-master/Vendor/libmodbus/modbus-data.c"; sourceTree = "<group>"; };
+		E8ABD8361C14F71F00CAEF69 /* modbus-private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "modbus-private.h"; path = "../../../../Downloads/ObjectiveLibModbus-master/Vendor/libmodbus/modbus-private.h"; sourceTree = "<group>"; };
+		E8ABD8371C14F71F00CAEF69 /* modbus-rtu-private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "modbus-rtu-private.h"; path = "../../../../Downloads/ObjectiveLibModbus-master/Vendor/libmodbus/modbus-rtu-private.h"; sourceTree = "<group>"; };
+		E8ABD8381C14F71F00CAEF69 /* modbus-rtu.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "modbus-rtu.c"; path = "../../../../Downloads/ObjectiveLibModbus-master/Vendor/libmodbus/modbus-rtu.c"; sourceTree = "<group>"; };
+		E8ABD8391C14F71F00CAEF69 /* modbus-rtu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "modbus-rtu.h"; path = "../../../../Downloads/ObjectiveLibModbus-master/Vendor/libmodbus/modbus-rtu.h"; sourceTree = "<group>"; };
+		E8ABD83A1C14F71F00CAEF69 /* modbus-tcp-private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "modbus-tcp-private.h"; path = "../../../../Downloads/ObjectiveLibModbus-master/Vendor/libmodbus/modbus-tcp-private.h"; sourceTree = "<group>"; };
+		E8ABD83B1C14F71F00CAEF69 /* modbus-tcp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "modbus-tcp.c"; path = "../../../../Downloads/ObjectiveLibModbus-master/Vendor/libmodbus/modbus-tcp.c"; sourceTree = "<group>"; };
+		E8ABD83C1C14F71F00CAEF69 /* modbus-tcp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "modbus-tcp.h"; path = "../../../../Downloads/ObjectiveLibModbus-master/Vendor/libmodbus/modbus-tcp.h"; sourceTree = "<group>"; };
+		E8ABD83D1C14F71F00CAEF69 /* modbus-version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "modbus-version.h"; path = "../../../../Downloads/ObjectiveLibModbus-master/Vendor/libmodbus/modbus-version.h"; sourceTree = "<group>"; };
+		E8ABD83E1C14F71F00CAEF69 /* modbus.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = modbus.c; path = "../../../../Downloads/ObjectiveLibModbus-master/Vendor/libmodbus/modbus.c"; sourceTree = "<group>"; };
+		E8ABD83F1C14F71F00CAEF69 /* modbus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = modbus.h; path = "../../../../Downloads/ObjectiveLibModbus-master/Vendor/libmodbus/modbus.h"; sourceTree = "<group>"; };
+		E8F082791C1B796D0015143E /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E8ABD7FC1C14F6DA00CAEF69 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8ABD8101C14F6DA00CAEF69 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8ABD81B1C14F6DA00CAEF69 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E8ABD7F61C14F6DA00CAEF69 = {
+			isa = PBXGroup;
+			children = (
+				E8ABD8011C14F6DA00CAEF69 /* mb_1 */,
+				E8ABD8161C14F6DA00CAEF69 /* mb_1Tests */,
+				E8ABD8211C14F6DA00CAEF69 /* mb_1UITests */,
+				E8ABD8001C14F6DA00CAEF69 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E8ABD8001C14F6DA00CAEF69 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E8ABD7FF1C14F6DA00CAEF69 /* mb_1.app */,
+				E8ABD8131C14F6DA00CAEF69 /* mb_1Tests.xctest */,
+				E8ABD81E1C14F6DA00CAEF69 /* mb_1UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E8ABD8011C14F6DA00CAEF69 /* mb_1 */ = {
+			isa = PBXGroup;
+			children = (
+				E8ABD8441C15116700CAEF69 /* Vendor */,
+				E8ABD8451C15117900CAEF69 /* ObjectiveLibModbus */,
+				E8ABD8021C14F6DA00CAEF69 /* AppDelegate.swift */,
+				E8ABD8061C14F6DA00CAEF69 /* Main.storyboard */,
+				E8ABD8041C14F6DA00CAEF69 /* ViewController.swift */,
+				E8F082791C1B796D0015143E /* SettingsViewController.swift */,
+				E8ABD8091C14F6DA00CAEF69 /* Assets.xcassets */,
+				E8ABD80B1C14F6DA00CAEF69 /* LaunchScreen.storyboard */,
+				E8ABD80E1C14F6DA00CAEF69 /* Info.plist */,
+				E8ABD8301C14F70500CAEF69 /* mb_1-Bridging-Header.h */,
+			);
+			path = mb_1;
+			sourceTree = "<group>";
+		};
+		E8ABD8161C14F6DA00CAEF69 /* mb_1Tests */ = {
+			isa = PBXGroup;
+			children = (
+				E8ABD8171C14F6DA00CAEF69 /* mb_1Tests.swift */,
+				E8ABD8191C14F6DA00CAEF69 /* Info.plist */,
+			);
+			path = mb_1Tests;
+			sourceTree = "<group>";
+		};
+		E8ABD8211C14F6DA00CAEF69 /* mb_1UITests */ = {
+			isa = PBXGroup;
+			children = (
+				E8ABD8221C14F6DA00CAEF69 /* mb_1UITests.swift */,
+				E8ABD8241C14F6DA00CAEF69 /* Info.plist */,
+			);
+			path = mb_1UITests;
+			sourceTree = "<group>";
+		};
+		E8ABD8441C15116700CAEF69 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				E8ABD8341C14F71F00CAEF69 /* config.h */,
+				E8ABD8351C14F71F00CAEF69 /* modbus-data.c */,
+				E8ABD8361C14F71F00CAEF69 /* modbus-private.h */,
+				E8ABD8371C14F71F00CAEF69 /* modbus-rtu-private.h */,
+				E8ABD8381C14F71F00CAEF69 /* modbus-rtu.c */,
+				E8ABD8391C14F71F00CAEF69 /* modbus-rtu.h */,
+				E8ABD83A1C14F71F00CAEF69 /* modbus-tcp-private.h */,
+				E8ABD83B1C14F71F00CAEF69 /* modbus-tcp.c */,
+				E8ABD83C1C14F71F00CAEF69 /* modbus-tcp.h */,
+				E8ABD83D1C14F71F00CAEF69 /* modbus-version.h */,
+				E8ABD83E1C14F71F00CAEF69 /* modbus.c */,
+				E8ABD83F1C14F71F00CAEF69 /* modbus.h */,
+			);
+			name = Vendor;
+			sourceTree = "<group>";
+		};
+		E8ABD8451C15117900CAEF69 /* ObjectiveLibModbus */ = {
+			isa = PBXGroup;
+			children = (
+				E8ABD8311C14F70600CAEF69 /* ObjectiveLibModbus.h */,
+				E8ABD8321C14F70600CAEF69 /* ObjectiveLibModbus.m */,
+			);
+			name = ObjectiveLibModbus;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E8ABD7FE1C14F6DA00CAEF69 /* mb_1 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8ABD8271C14F6DA00CAEF69 /* Build configuration list for PBXNativeTarget "mb_1" */;
+			buildPhases = (
+				E8ABD7FB1C14F6DA00CAEF69 /* Sources */,
+				E8ABD7FC1C14F6DA00CAEF69 /* Frameworks */,
+				E8ABD7FD1C14F6DA00CAEF69 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = mb_1;
+			productName = mb_1;
+			productReference = E8ABD7FF1C14F6DA00CAEF69 /* mb_1.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E8ABD8121C14F6DA00CAEF69 /* mb_1Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8ABD82A1C14F6DA00CAEF69 /* Build configuration list for PBXNativeTarget "mb_1Tests" */;
+			buildPhases = (
+				E8ABD80F1C14F6DA00CAEF69 /* Sources */,
+				E8ABD8101C14F6DA00CAEF69 /* Frameworks */,
+				E8ABD8111C14F6DA00CAEF69 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E8ABD8151C14F6DA00CAEF69 /* PBXTargetDependency */,
+			);
+			name = mb_1Tests;
+			productName = mb_1Tests;
+			productReference = E8ABD8131C14F6DA00CAEF69 /* mb_1Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E8ABD81D1C14F6DA00CAEF69 /* mb_1UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8ABD82D1C14F6DA00CAEF69 /* Build configuration list for PBXNativeTarget "mb_1UITests" */;
+			buildPhases = (
+				E8ABD81A1C14F6DA00CAEF69 /* Sources */,
+				E8ABD81B1C14F6DA00CAEF69 /* Frameworks */,
+				E8ABD81C1C14F6DA00CAEF69 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E8ABD8201C14F6DA00CAEF69 /* PBXTargetDependency */,
+			);
+			name = mb_1UITests;
+			productName = mb_1UITests;
+			productReference = E8ABD81E1C14F6DA00CAEF69 /* mb_1UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E8ABD7F71C14F6DA00CAEF69 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Walter Marchewka";
+				TargetAttributes = {
+					E8ABD7FE1C14F6DA00CAEF69 = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = 3S476LML66;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
+						};
+					};
+					E8ABD8121C14F6DA00CAEF69 = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = E8ABD7FE1C14F6DA00CAEF69;
+					};
+					E8ABD81D1C14F6DA00CAEF69 = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = E8ABD7FE1C14F6DA00CAEF69;
+					};
+				};
+			};
+			buildConfigurationList = E8ABD7FA1C14F6DA00CAEF69 /* Build configuration list for PBXProject "mb_1" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E8ABD7F61C14F6DA00CAEF69;
+			productRefGroup = E8ABD8001C14F6DA00CAEF69 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E8ABD7FE1C14F6DA00CAEF69 /* mb_1 */,
+				E8ABD8121C14F6DA00CAEF69 /* mb_1Tests */,
+				E8ABD81D1C14F6DA00CAEF69 /* mb_1UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E8ABD7FD1C14F6DA00CAEF69 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8ABD80D1C14F6DA00CAEF69 /* LaunchScreen.storyboard in Resources */,
+				E8ABD80A1C14F6DA00CAEF69 /* Assets.xcassets in Resources */,
+				E8ABD8081C14F6DA00CAEF69 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8ABD8111C14F6DA00CAEF69 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8ABD81C1C14F6DA00CAEF69 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E8ABD7FB1C14F6DA00CAEF69 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8ABD8331C14F70600CAEF69 /* ObjectiveLibModbus.m in Sources */,
+				E8ABD8411C14F71F00CAEF69 /* modbus-rtu.c in Sources */,
+				E8ABD8051C14F6DA00CAEF69 /* ViewController.swift in Sources */,
+				E8ABD8431C14F71F00CAEF69 /* modbus.c in Sources */,
+				E8ABD8031C14F6DA00CAEF69 /* AppDelegate.swift in Sources */,
+				E8ABD8401C14F71F00CAEF69 /* modbus-data.c in Sources */,
+				E8ABD8421C14F71F00CAEF69 /* modbus-tcp.c in Sources */,
+				E8F0827A1C1B796D0015143E /* SettingsViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8ABD80F1C14F6DA00CAEF69 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8ABD8181C14F6DA00CAEF69 /* mb_1Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8ABD81A1C14F6DA00CAEF69 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8ABD8231C14F6DA00CAEF69 /* mb_1UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E8ABD8151C14F6DA00CAEF69 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E8ABD7FE1C14F6DA00CAEF69 /* mb_1 */;
+			targetProxy = E8ABD8141C14F6DA00CAEF69 /* PBXContainerItemProxy */;
+		};
+		E8ABD8201C14F6DA00CAEF69 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E8ABD7FE1C14F6DA00CAEF69 /* mb_1 */;
+			targetProxy = E8ABD81F1C14F6DA00CAEF69 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E8ABD8061C14F6DA00CAEF69 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E8ABD8071C14F6DA00CAEF69 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E8ABD80B1C14F6DA00CAEF69 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E8ABD80C1C14F6DA00CAEF69 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E8ABD8251C14F6DA00CAEF69 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E8ABD8261C14F6DA00CAEF69 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E8ABD8281C14F6DA00CAEF69 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = mb_1/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.waltermarchewka.mb-1";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "mb_1/mb_1-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		E8ABD8291C14F6DA00CAEF69 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = mb_1/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.waltermarchewka.mb-1";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "mb_1/mb_1-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		E8ABD82B1C14F6DA00CAEF69 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = mb_1Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.waltermarchewka.mb-1Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mb_1.app/mb_1";
+			};
+			name = Debug;
+		};
+		E8ABD82C1C14F6DA00CAEF69 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = mb_1Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.waltermarchewka.mb-1Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mb_1.app/mb_1";
+			};
+			name = Release;
+		};
+		E8ABD82E1C14F6DA00CAEF69 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = mb_1UITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.waltermarchewka.mb-1UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = mb_1;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		E8ABD82F1C14F6DA00CAEF69 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = mb_1UITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.waltermarchewka.mb-1UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = mb_1;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E8ABD7FA1C14F6DA00CAEF69 /* Build configuration list for PBXProject "mb_1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8ABD8251C14F6DA00CAEF69 /* Debug */,
+				E8ABD8261C14F6DA00CAEF69 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E8ABD8271C14F6DA00CAEF69 /* Build configuration list for PBXNativeTarget "mb_1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8ABD8281C14F6DA00CAEF69 /* Debug */,
+				E8ABD8291C14F6DA00CAEF69 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E8ABD82A1C14F6DA00CAEF69 /* Build configuration list for PBXNativeTarget "mb_1Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8ABD82B1C14F6DA00CAEF69 /* Debug */,
+				E8ABD82C1C14F6DA00CAEF69 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E8ABD82D1C14F6DA00CAEF69 /* Build configuration list for PBXNativeTarget "mb_1UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8ABD82E1C14F6DA00CAEF69 /* Debug */,
+				E8ABD82F1C14F6DA00CAEF69 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E8ABD7F71C14F6DA00CAEF69 /* Project object */;
+}
