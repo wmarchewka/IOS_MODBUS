@@ -28,13 +28,16 @@
     @IBOutlet weak var rssiSignalLabel: UILabel!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var BatteryVoltageLabel: UILabel!
-    
     @IBOutlet weak var txtIPAddress: UILabel!
+    
     @IBOutlet weak var txtWriteRegister: UITextField!
     @IBOutlet weak var txtReadRegister: UITextField!
     @IBOutlet weak var txtReturnRegisters: UITextField!
     @IBOutlet weak var txtCoilRegister: UITextField!
     
+    @IBOutlet weak var switchCoilValue: UISwitch!
+    @IBOutlet weak var autoPollButton: UISwitch!
+
     @IBOutlet weak var writeRegistersButton: UIButton!
     @IBOutlet weak var writeRegisterButton: UIButton!
     @IBOutlet weak var readRegisterButton: UIButton!
@@ -43,9 +46,7 @@
     @IBOutlet weak var writeCoilButton: UIButton!
     
     @IBOutlet weak var CoilRegisterStepper: UIStepper!
-    
-    @IBOutlet weak var switchCoilValue: UISwitch!
-    
+       
     @IBOutlet weak var txtViewError: UITextView!
     
         
@@ -64,6 +65,8 @@
         txtReadRegister.text="00000"
         txtCoilRegister.text="0"
         txtIPAddress.text=glbIpAddress
+        connectedLabel.text="Waiting connection"
+        
         
         writeRegisterButton.layer.backgroundColor = UIColor.blackColor().CGColor
         writeRegisterButton.layer.borderWidth = 3
@@ -105,11 +108,9 @@
         CoilRegisterStepper.autorepeat = true
         CoilRegisterStepper.maximumValue = 10
         CoilRegisterStepper.minimumValue = 0
+        autoPollButton.on=false
         
-
-        
-        
-        connectToServer()
+        //connectToServer()
       
     }
     
@@ -130,6 +131,7 @@
                 let destination = segue.destinationViewController as! SettingsViewController
                 destination.delegate = self
                 destination.ipAddressText=glbIpAddress
+                destination.awake=UIApplication.sharedApplication().idleTimerDisabled
            }
         }
         
@@ -139,7 +141,12 @@
             glbIpAddress=ipAddress
         }
 
-    
+        // Called from the destination controller via delegation
+        func  setAwake(Awake: Bool) {
+        UIApplication.sharedApplication().idleTimerDisabled = Awake
+
+        }
+   
     @IBAction func sendRegister(sender : AnyObject) {
         let registerToSend = Int32(txtWriteRegister.text!)
         objLibModbus.writeRegister(25, to: registerToSend!, success: {() -> Void in
@@ -208,25 +215,29 @@
     func connectToServer() {
         objLibModbus.connect({() -> Void in
             self.connectedLabel.text = "Connecting SUCCEEDED!"
-            self.txtViewError.text = "Connecting SUCCEEDED!"
             self.writeRegisterButton.enabled = true
             self.writeRegistersButton.enabled = true
+            log = "Connecting SUCCEEDED!\n" + log
+            self.txtViewError.text = log
             }, failure: {(error: NSError!) -> Void in
-                self.connectedLabel.text = "Failed to connect!"
+                self.connectedLabel.text = "Connecting FAILED!"
                 self.errorLabel.text = "Connecting FAILED"
+                log = "Connecting FAILED!\n" + log
+                self.txtViewError.text = log
+                
         })
     }
     
     func disconnectServer() {
         objLibModbus.disconnect()
         self.connectedLabel.text = "DISCONNECTED"
-        self.txtViewError.text = "DISCONNECTED"
+        log = "DISCONNECTED!\n" + log
+        self.txtViewError.text = log
+        print("Disconnect from server....")
     }
     
     @IBAction func closeConnection(sender : AnyObject) {
-        
         disconnectServer()
-        print("Disconnect from server....")
     }
     
     @IBAction func openConnection(sender : AnyObject) {
@@ -236,13 +247,10 @@
     }
         
         func OneSecondInterval() {
-            
+            if autoPollButton.on {
        print("Firing every second")
        readRegister(nil)
-            print(glbIpAddress)
-       
-            
-        
+            }
         }
     
 }

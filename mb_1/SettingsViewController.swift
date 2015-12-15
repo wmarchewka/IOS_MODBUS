@@ -11,6 +11,7 @@ import UIKit
 
 protocol DestinationViewDelegate {
     func setIPAddress(ipAddress: String);
+    func setAwake(Awake: Bool);
 }
 
 
@@ -19,12 +20,15 @@ class SettingsViewController: UIViewController{
     
     var delegate : DestinationViewDelegate! = nil
     var ipAddressText : String! = nil
-    @IBOutlet weak var txtIPAddress: UITextField!
+    var awake : Bool! = nil
     
+    @IBOutlet weak var txtIPAddress: UITextField!
+    @IBOutlet weak var StayAwake: UISwitch!
    
     override func viewDidLoad() {
         super.viewDidLoad()
         txtIPAddress.text=ipAddressText
+        StayAwake.on = awake
     }
   
     
@@ -38,4 +42,9 @@ class SettingsViewController: UIViewController{
             print("title is nil")
         }
     }
+    
+    @IBAction func setAwakeChanged(sender: UISwitch) {
+            delegate.setAwake(sender.on)
+            self.navigationController?.popToRootViewControllerAnimated(true)
+        }
 }

@@ -37,11 +37,24 @@
                                     <action selector="ipChanged:" destination="G5R-PP-Jct" eventType="editingDidEnd" id="J8H-6l-mfS"/>
                                 </connections>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Stay awake" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dpy-Db-b5h">
+                                <rect key="frame" x="5" y="168" width="86" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RDd-oM-PPr">
+                                <rect key="frame" x="112" y="163" width="51" height="31"/>
+                                <connections>
+                                    <action selector="setAwakeChanged:" destination="G5R-PP-Jct" eventType="valueChanged" id="o8u-GB-23c"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Zft-Mb-4Zh"/>
                     <connections>
+                        <outlet property="StayAwake" destination="RDd-oM-PPr" id="Mf3-WM-Ema"/>
                         <outlet property="txtIPAddress" destination="vKC-ks-CPH" id="599-BV-QXZ"/>
                     </connections>
                 </viewController>
@@ -248,6 +261,15 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="utY-Ia-Xbg">
+                                <rect key="frame" x="53" y="220" width="51" height="31"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AUTO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YTI-gb-4BH">
+                                <rect key="frame" x="3" y="223" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -258,6 +280,7 @@
                     <connections>
                         <outlet property="BatteryVoltageLabel" destination="5kh-Cn-Uz3" id="uQ7-hA-e1R"/>
                         <outlet property="CoilRegisterStepper" destination="YQ6-hp-40W" id="Pd6-9g-THD"/>
+                        <outlet property="autoPollButton" destination="utY-Ia-Xbg" id="8m9-fe-qo8"/>
                         <outlet property="connectButton" destination="BML-RJ-u3o" id="WAT-my-npy"/>
                         <outlet property="connectedLabel" destination="x77-nf-ybM" id="5IU-Xk-iWI"/>
                         <outlet property="disconnectButton" destination="LSE-mo-daB" id="ZXp-uV-Xhx"/>
