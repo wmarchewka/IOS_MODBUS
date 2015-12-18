@@ -1,0 +1,878 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E898812D1C2296AB00F3B68E /* ObjectiveLibModbus.m in Sources */ = {isa = PBXBuildFile; fileRef = E89881191C2296AB00F3B68E /* ObjectiveLibModbus.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E898812E1C2296AB00F3B68E /* AUTHORS in Resources */ = {isa = PBXBuildFile; fileRef = E898811C1C2296AB00F3B68E /* AUTHORS */; };
+		E898812F1C2296AB00F3B68E /* COPYING in Resources */ = {isa = PBXBuildFile; fileRef = E898811E1C2296AB00F3B68E /* COPYING */; };
+		E89881301C2296AB00F3B68E /* COPYING.LESSER in Resources */ = {isa = PBXBuildFile; fileRef = E898811F1C2296AB00F3B68E /* COPYING.LESSER */; };
+		E89881311C2296AB00F3B68E /* modbus-data.c in Sources */ = {isa = PBXBuildFile; fileRef = E89881201C2296AB00F3B68E /* modbus-data.c */; };
+		E89881321C2296AB00F3B68E /* modbus-rtu.c in Sources */ = {isa = PBXBuildFile; fileRef = E89881231C2296AB00F3B68E /* modbus-rtu.c */; };
+		E89881331C2296AB00F3B68E /* modbus-tcp.c in Sources */ = {isa = PBXBuildFile; fileRef = E89881261C2296AB00F3B68E /* modbus-tcp.c */; };
+		E89881341C2296AB00F3B68E /* modbus.c in Sources */ = {isa = PBXBuildFile; fileRef = E89881291C2296AB00F3B68E /* modbus.c */; };
+		E89881351C2296AB00F3B68E /* NEWS in Resources */ = {isa = PBXBuildFile; fileRef = E898812B1C2296AB00F3B68E /* NEWS */; };
+		E89881361C2296AB00F3B68E /* README.rst in Resources */ = {isa = PBXBuildFile; fileRef = E898812C1C2296AB00F3B68E /* README.rst */; };
+		E8ABD8031C14F6DA00CAEF69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ABD8021C14F6DA00CAEF69 /* AppDelegate.swift */; };
+		E8ABD8051C14F6DA00CAEF69 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ABD8041C14F6DA00CAEF69 /* MainViewController.swift */; };
+		E8ABD8081C14F6DA00CAEF69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8ABD8061C14F6DA00CAEF69 /* Main.storyboard */; };
+		E8ABD80A1C14F6DA00CAEF69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8ABD8091C14F6DA00CAEF69 /* Assets.xcassets */; };
+		E8ABD80D1C14F6DA00CAEF69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8ABD80B1C14F6DA00CAEF69 /* LaunchScreen.storyboard */; };
+		E8ABD8181C14F6DA00CAEF69 /* mb_1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ABD8171C14F6DA00CAEF69 /* mb_1Tests.swift */; };
+		E8ABD8231C14F6DA00CAEF69 /* mb_1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ABD8221C14F6DA00CAEF69 /* mb_1UITests.swift */; };
+		E8BE1DA01C2364B300B55C4C /* libmodbus.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D651C2364B300B55C4C /* libmodbus.txt */; };
+		E8BE1DA11C2364B300B55C4C /* modbus_close.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D661C2364B300B55C4C /* modbus_close.txt */; };
+		E8BE1DA21C2364B300B55C4C /* modbus_connect.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D671C2364B300B55C4C /* modbus_connect.txt */; };
+		E8BE1DA31C2364B300B55C4C /* modbus_flush.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D681C2364B300B55C4C /* modbus_flush.txt */; };
+		E8BE1DA41C2364B300B55C4C /* modbus_free.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D691C2364B300B55C4C /* modbus_free.txt */; };
+		E8BE1DA51C2364B300B55C4C /* modbus_get_byte_from_bits.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D6A1C2364B300B55C4C /* modbus_get_byte_from_bits.txt */; };
+		E8BE1DA61C2364B300B55C4C /* modbus_get_byte_timeout.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D6B1C2364B300B55C4C /* modbus_get_byte_timeout.txt */; };
+		E8BE1DA71C2364B300B55C4C /* modbus_get_float.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D6C1C2364B300B55C4C /* modbus_get_float.txt */; };
+		E8BE1DA81C2364B300B55C4C /* modbus_get_float_abcd.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D6D1C2364B300B55C4C /* modbus_get_float_abcd.txt */; };
+		E8BE1DA91C2364B300B55C4C /* modbus_get_float_badc.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D6E1C2364B300B55C4C /* modbus_get_float_badc.txt */; };
+		E8BE1DAA1C2364B300B55C4C /* modbus_get_float_cdab.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D6F1C2364B300B55C4C /* modbus_get_float_cdab.txt */; };
+		E8BE1DAB1C2364B300B55C4C /* modbus_get_float_dcba.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D701C2364B300B55C4C /* modbus_get_float_dcba.txt */; };
+		E8BE1DAC1C2364B300B55C4C /* modbus_get_header_length.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D711C2364B300B55C4C /* modbus_get_header_length.txt */; };
+		E8BE1DAD1C2364B300B55C4C /* modbus_get_response_timeout.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D721C2364B300B55C4C /* modbus_get_response_timeout.txt */; };
+		E8BE1DAE1C2364B300B55C4C /* modbus_get_socket.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D731C2364B300B55C4C /* modbus_get_socket.txt */; };
+		E8BE1DAF1C2364B300B55C4C /* modbus_mapping_free.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D741C2364B300B55C4C /* modbus_mapping_free.txt */; };
+		E8BE1DB01C2364B300B55C4C /* modbus_mapping_new.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D751C2364B300B55C4C /* modbus_mapping_new.txt */; };
+		E8BE1DB11C2364B300B55C4C /* modbus_mapping_offset_new.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D761C2364B300B55C4C /* modbus_mapping_offset_new.txt */; };
+		E8BE1DB21C2364B300B55C4C /* modbus_mask_write_register.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D771C2364B300B55C4C /* modbus_mask_write_register.txt */; };
+		E8BE1DB31C2364B300B55C4C /* modbus_new_rtu.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D781C2364B300B55C4C /* modbus_new_rtu.txt */; };
+		E8BE1DB41C2364B300B55C4C /* modbus_new_tcp.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D791C2364B300B55C4C /* modbus_new_tcp.txt */; };
+		E8BE1DB51C2364B300B55C4C /* modbus_new_tcp_pi.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D7A1C2364B300B55C4C /* modbus_new_tcp_pi.txt */; };
+		E8BE1DB61C2364B300B55C4C /* modbus_read_bits.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D7B1C2364B300B55C4C /* modbus_read_bits.txt */; };
+		E8BE1DB71C2364B300B55C4C /* modbus_read_input_bits.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D7C1C2364B300B55C4C /* modbus_read_input_bits.txt */; };
+		E8BE1DB81C2364B300B55C4C /* modbus_read_input_registers.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D7D1C2364B300B55C4C /* modbus_read_input_registers.txt */; };
+		E8BE1DB91C2364B300B55C4C /* modbus_read_registers.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D7E1C2364B300B55C4C /* modbus_read_registers.txt */; };
+		E8BE1DBA1C2364B300B55C4C /* modbus_receive.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D7F1C2364B300B55C4C /* modbus_receive.txt */; };
+		E8BE1DBB1C2364B300B55C4C /* modbus_receive_confirmation.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D801C2364B300B55C4C /* modbus_receive_confirmation.txt */; };
+		E8BE1DBC1C2364B300B55C4C /* modbus_reply.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D811C2364B300B55C4C /* modbus_reply.txt */; };
+		E8BE1DBD1C2364B300B55C4C /* modbus_reply_exception.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D821C2364B300B55C4C /* modbus_reply_exception.txt */; };
+		E8BE1DBE1C2364B300B55C4C /* modbus_report_slave_id.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D831C2364B300B55C4C /* modbus_report_slave_id.txt */; };
+		E8BE1DBF1C2364B300B55C4C /* modbus_rtu_get_rts.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D841C2364B300B55C4C /* modbus_rtu_get_rts.txt */; };
+		E8BE1DC01C2364B300B55C4C /* modbus_rtu_get_rts_delay.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D851C2364B300B55C4C /* modbus_rtu_get_rts_delay.txt */; };
+		E8BE1DC11C2364B300B55C4C /* modbus_rtu_get_serial_mode.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D861C2364B300B55C4C /* modbus_rtu_get_serial_mode.txt */; };
+		E8BE1DC21C2364B300B55C4C /* modbus_rtu_set_custom_rts.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D871C2364B300B55C4C /* modbus_rtu_set_custom_rts.txt */; };
+		E8BE1DC31C2364B300B55C4C /* modbus_rtu_set_rts.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D881C2364B300B55C4C /* modbus_rtu_set_rts.txt */; };
+		E8BE1DC41C2364B300B55C4C /* modbus_rtu_set_rts_delay.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D891C2364B300B55C4C /* modbus_rtu_set_rts_delay.txt */; };
+		E8BE1DC51C2364B300B55C4C /* modbus_rtu_set_serial_mode.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D8A1C2364B300B55C4C /* modbus_rtu_set_serial_mode.txt */; };
+		E8BE1DC61C2364B300B55C4C /* modbus_send_raw_request.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D8B1C2364B300B55C4C /* modbus_send_raw_request.txt */; };
+		E8BE1DC71C2364B300B55C4C /* modbus_set_bits_from_byte.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D8C1C2364B300B55C4C /* modbus_set_bits_from_byte.txt */; };
+		E8BE1DC81C2364B300B55C4C /* modbus_set_bits_from_bytes.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D8D1C2364B300B55C4C /* modbus_set_bits_from_bytes.txt */; };
+		E8BE1DC91C2364B300B55C4C /* modbus_set_byte_timeout.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D8E1C2364B300B55C4C /* modbus_set_byte_timeout.txt */; };
+		E8BE1DCA1C2364B300B55C4C /* modbus_set_debug.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D8F1C2364B300B55C4C /* modbus_set_debug.txt */; };
+		E8BE1DCB1C2364B300B55C4C /* modbus_set_error_recovery.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D901C2364B300B55C4C /* modbus_set_error_recovery.txt */; };
+		E8BE1DCC1C2364B300B55C4C /* modbus_set_float.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D911C2364B300B55C4C /* modbus_set_float.txt */; };
+		E8BE1DCD1C2364B300B55C4C /* modbus_set_float_dcba.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D921C2364B300B55C4C /* modbus_set_float_dcba.txt */; };
+		E8BE1DCE1C2364B300B55C4C /* modbus_set_response_timeout.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D931C2364B300B55C4C /* modbus_set_response_timeout.txt */; };
+		E8BE1DCF1C2364B300B55C4C /* modbus_set_slave.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D941C2364B300B55C4C /* modbus_set_slave.txt */; };
+		E8BE1DD01C2364B300B55C4C /* modbus_set_socket.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D951C2364B300B55C4C /* modbus_set_socket.txt */; };
+		E8BE1DD11C2364B300B55C4C /* modbus_strerror.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D961C2364B300B55C4C /* modbus_strerror.txt */; };
+		E8BE1DD21C2364B300B55C4C /* modbus_tcp_accept.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D971C2364B300B55C4C /* modbus_tcp_accept.txt */; };
+		E8BE1DD31C2364B300B55C4C /* modbus_tcp_listen.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D981C2364B300B55C4C /* modbus_tcp_listen.txt */; };
+		E8BE1DD41C2364B300B55C4C /* modbus_tcp_pi_accept.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D991C2364B300B55C4C /* modbus_tcp_pi_accept.txt */; };
+		E8BE1DD51C2364B300B55C4C /* modbus_tcp_pi_listen.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D9A1C2364B300B55C4C /* modbus_tcp_pi_listen.txt */; };
+		E8BE1DD61C2364B300B55C4C /* modbus_write_and_read_registers.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D9B1C2364B300B55C4C /* modbus_write_and_read_registers.txt */; };
+		E8BE1DD71C2364B300B55C4C /* modbus_write_bit.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D9C1C2364B300B55C4C /* modbus_write_bit.txt */; };
+		E8BE1DD81C2364B300B55C4C /* modbus_write_bits.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D9D1C2364B300B55C4C /* modbus_write_bits.txt */; };
+		E8BE1DD91C2364B300B55C4C /* modbus_write_register.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D9E1C2364B300B55C4C /* modbus_write_register.txt */; };
+		E8BE1DDA1C2364B300B55C4C /* modbus_write_registers.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8BE1D9F1C2364B300B55C4C /* modbus_write_registers.txt */; };
+		E8F0827A1C1B796D0015143E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F082791C1B796D0015143E /* SettingsViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		E83384D61C23363F00139E3E /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = text.plist;
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "# builtin-copyPlist\n";
+		};
+/* End PBXBuildRule section */
+
+/* Begin PBXContainerItemProxy section */
+		E8ABD8141C14F6DA00CAEF69 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E8ABD7F71C14F6DA00CAEF69 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E8ABD7FE1C14F6DA00CAEF69;
+			remoteInfo = mb_1;
+		};
+		E8ABD81F1C14F6DA00CAEF69 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E8ABD7F71C14F6DA00CAEF69 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E8ABD7FE1C14F6DA00CAEF69;
+			remoteInfo = mb_1;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E83384D21C2335B900139E3E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E89881181C2296AB00F3B68E /* ObjectiveLibModbus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectiveLibModbus.h; sourceTree = "<group>"; };
+		E89881191C2296AB00F3B68E /* ObjectiveLibModbus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectiveLibModbus.m; sourceTree = "<group>"; };
+		E898811C1C2296AB00F3B68E /* AUTHORS */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AUTHORS; sourceTree = "<group>"; };
+		E898811D1C2296AB00F3B68E /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		E898811E1C2296AB00F3B68E /* COPYING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
+		E898811F1C2296AB00F3B68E /* COPYING.LESSER */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING.LESSER; sourceTree = "<group>"; };
+		E89881201C2296AB00F3B68E /* modbus-data.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "modbus-data.c"; sourceTree = "<group>"; };
+		E89881211C2296AB00F3B68E /* modbus-private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "modbus-private.h"; sourceTree = "<group>"; };
+		E89881221C2296AB00F3B68E /* modbus-rtu-private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "modbus-rtu-private.h"; sourceTree = "<group>"; };
+		E89881231C2296AB00F3B68E /* modbus-rtu.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "modbus-rtu.c"; sourceTree = "<group>"; };
+		E89881241C2296AB00F3B68E /* modbus-rtu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "modbus-rtu.h"; sourceTree = "<group>"; };
+		E89881251C2296AB00F3B68E /* modbus-tcp-private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "modbus-tcp-private.h"; sourceTree = "<group>"; };
+		E89881261C2296AB00F3B68E /* modbus-tcp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "modbus-tcp.c"; sourceTree = "<group>"; };
+		E89881271C2296AB00F3B68E /* modbus-tcp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "modbus-tcp.h"; sourceTree = "<group>"; };
+		E89881281C2296AB00F3B68E /* modbus-version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "modbus-version.h"; sourceTree = "<group>"; };
+		E89881291C2296AB00F3B68E /* modbus.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = modbus.c; sourceTree = "<group>"; };
+		E898812A1C2296AB00F3B68E /* modbus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = modbus.h; sourceTree = "<group>"; };
+		E898812B1C2296AB00F3B68E /* NEWS */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NEWS; sourceTree = "<group>"; };
+		E898812C1C2296AB00F3B68E /* README.rst */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.rst; sourceTree = "<group>"; };
+		E8ABD7FF1C14F6DA00CAEF69 /* IOS_Modbus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOS_Modbus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8ABD8021C14F6DA00CAEF69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../IOS_Modbus/AppDelegate.swift; sourceTree = "<group>"; };
+		E8ABD8041C14F6DA00CAEF69 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		E8ABD8071C14F6DA00CAEF69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E8ABD8091C14F6DA00CAEF69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E8ABD80C1C14F6DA00CAEF69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E8ABD8131C14F6DA00CAEF69 /* IOS_Modbus.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IOS_Modbus.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8ABD8171C14F6DA00CAEF69 /* mb_1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mb_1Tests.swift; sourceTree = "<group>"; };
+		E8ABD8191C14F6DA00CAEF69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8ABD81E1C14F6DA00CAEF69 /* IOS_Modbus.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IOS_Modbus.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8ABD8221C14F6DA00CAEF69 /* mb_1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mb_1UITests.swift; sourceTree = "<group>"; };
+		E8ABD8241C14F6DA00CAEF69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8ABD8301C14F70500CAEF69 /* IOS_Modbus-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IOS_Modbus-Bridging-Header.h"; sourceTree = "<group>"; };
+		E8BE1D651C2364B300B55C4C /* libmodbus.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = libmodbus.txt; sourceTree = "<group>"; };
+		E8BE1D661C2364B300B55C4C /* modbus_close.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_close.txt; sourceTree = "<group>"; };
+		E8BE1D671C2364B300B55C4C /* modbus_connect.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_connect.txt; sourceTree = "<group>"; };
+		E8BE1D681C2364B300B55C4C /* modbus_flush.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_flush.txt; sourceTree = "<group>"; };
+		E8BE1D691C2364B300B55C4C /* modbus_free.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_free.txt; sourceTree = "<group>"; };
+		E8BE1D6A1C2364B300B55C4C /* modbus_get_byte_from_bits.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_get_byte_from_bits.txt; sourceTree = "<group>"; };
+		E8BE1D6B1C2364B300B55C4C /* modbus_get_byte_timeout.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_get_byte_timeout.txt; sourceTree = "<group>"; };
+		E8BE1D6C1C2364B300B55C4C /* modbus_get_float.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_get_float.txt; sourceTree = "<group>"; };
+		E8BE1D6D1C2364B300B55C4C /* modbus_get_float_abcd.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_get_float_abcd.txt; sourceTree = "<group>"; };
+		E8BE1D6E1C2364B300B55C4C /* modbus_get_float_badc.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_get_float_badc.txt; sourceTree = "<group>"; };
+		E8BE1D6F1C2364B300B55C4C /* modbus_get_float_cdab.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_get_float_cdab.txt; sourceTree = "<group>"; };
+		E8BE1D701C2364B300B55C4C /* modbus_get_float_dcba.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_get_float_dcba.txt; sourceTree = "<group>"; };
+		E8BE1D711C2364B300B55C4C /* modbus_get_header_length.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_get_header_length.txt; sourceTree = "<group>"; };
+		E8BE1D721C2364B300B55C4C /* modbus_get_response_timeout.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_get_response_timeout.txt; sourceTree = "<group>"; };
+		E8BE1D731C2364B300B55C4C /* modbus_get_socket.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_get_socket.txt; sourceTree = "<group>"; };
+		E8BE1D741C2364B300B55C4C /* modbus_mapping_free.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_mapping_free.txt; sourceTree = "<group>"; };
+		E8BE1D751C2364B300B55C4C /* modbus_mapping_new.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_mapping_new.txt; sourceTree = "<group>"; };
+		E8BE1D761C2364B300B55C4C /* modbus_mapping_offset_new.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_mapping_offset_new.txt; sourceTree = "<group>"; };
+		E8BE1D771C2364B300B55C4C /* modbus_mask_write_register.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_mask_write_register.txt; sourceTree = "<group>"; };
+		E8BE1D781C2364B300B55C4C /* modbus_new_rtu.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_new_rtu.txt; sourceTree = "<group>"; };
+		E8BE1D791C2364B300B55C4C /* modbus_new_tcp.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_new_tcp.txt; sourceTree = "<group>"; };
+		E8BE1D7A1C2364B300B55C4C /* modbus_new_tcp_pi.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_new_tcp_pi.txt; sourceTree = "<group>"; };
+		E8BE1D7B1C2364B300B55C4C /* modbus_read_bits.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_read_bits.txt; sourceTree = "<group>"; };
+		E8BE1D7C1C2364B300B55C4C /* modbus_read_input_bits.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_read_input_bits.txt; sourceTree = "<group>"; };
+		E8BE1D7D1C2364B300B55C4C /* modbus_read_input_registers.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_read_input_registers.txt; sourceTree = "<group>"; };
+		E8BE1D7E1C2364B300B55C4C /* modbus_read_registers.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_read_registers.txt; sourceTree = "<group>"; };
+		E8BE1D7F1C2364B300B55C4C /* modbus_receive.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_receive.txt; sourceTree = "<group>"; };
+		E8BE1D801C2364B300B55C4C /* modbus_receive_confirmation.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_receive_confirmation.txt; sourceTree = "<group>"; };
+		E8BE1D811C2364B300B55C4C /* modbus_reply.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_reply.txt; sourceTree = "<group>"; };
+		E8BE1D821C2364B300B55C4C /* modbus_reply_exception.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_reply_exception.txt; sourceTree = "<group>"; };
+		E8BE1D831C2364B300B55C4C /* modbus_report_slave_id.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_report_slave_id.txt; sourceTree = "<group>"; };
+		E8BE1D841C2364B300B55C4C /* modbus_rtu_get_rts.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_rtu_get_rts.txt; sourceTree = "<group>"; };
+		E8BE1D851C2364B300B55C4C /* modbus_rtu_get_rts_delay.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_rtu_get_rts_delay.txt; sourceTree = "<group>"; };
+		E8BE1D861C2364B300B55C4C /* modbus_rtu_get_serial_mode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_rtu_get_serial_mode.txt; sourceTree = "<group>"; };
+		E8BE1D871C2364B300B55C4C /* modbus_rtu_set_custom_rts.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_rtu_set_custom_rts.txt; sourceTree = "<group>"; };
+		E8BE1D881C2364B300B55C4C /* modbus_rtu_set_rts.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_rtu_set_rts.txt; sourceTree = "<group>"; };
+		E8BE1D891C2364B300B55C4C /* modbus_rtu_set_rts_delay.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_rtu_set_rts_delay.txt; sourceTree = "<group>"; };
+		E8BE1D8A1C2364B300B55C4C /* modbus_rtu_set_serial_mode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_rtu_set_serial_mode.txt; sourceTree = "<group>"; };
+		E8BE1D8B1C2364B300B55C4C /* modbus_send_raw_request.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_send_raw_request.txt; sourceTree = "<group>"; };
+		E8BE1D8C1C2364B300B55C4C /* modbus_set_bits_from_byte.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_set_bits_from_byte.txt; sourceTree = "<group>"; };
+		E8BE1D8D1C2364B300B55C4C /* modbus_set_bits_from_bytes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_set_bits_from_bytes.txt; sourceTree = "<group>"; };
+		E8BE1D8E1C2364B300B55C4C /* modbus_set_byte_timeout.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_set_byte_timeout.txt; sourceTree = "<group>"; };
+		E8BE1D8F1C2364B300B55C4C /* modbus_set_debug.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_set_debug.txt; sourceTree = "<group>"; };
+		E8BE1D901C2364B300B55C4C /* modbus_set_error_recovery.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_set_error_recovery.txt; sourceTree = "<group>"; };
+		E8BE1D911C2364B300B55C4C /* modbus_set_float.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_set_float.txt; sourceTree = "<group>"; };
+		E8BE1D921C2364B300B55C4C /* modbus_set_float_dcba.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_set_float_dcba.txt; sourceTree = "<group>"; };
+		E8BE1D931C2364B300B55C4C /* modbus_set_response_timeout.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_set_response_timeout.txt; sourceTree = "<group>"; };
+		E8BE1D941C2364B300B55C4C /* modbus_set_slave.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_set_slave.txt; sourceTree = "<group>"; };
+		E8BE1D951C2364B300B55C4C /* modbus_set_socket.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_set_socket.txt; sourceTree = "<group>"; };
+		E8BE1D961C2364B300B55C4C /* modbus_strerror.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_strerror.txt; sourceTree = "<group>"; };
+		E8BE1D971C2364B300B55C4C /* modbus_tcp_accept.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_tcp_accept.txt; sourceTree = "<group>"; };
+		E8BE1D981C2364B300B55C4C /* modbus_tcp_listen.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_tcp_listen.txt; sourceTree = "<group>"; };
+		E8BE1D991C2364B300B55C4C /* modbus_tcp_pi_accept.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_tcp_pi_accept.txt; sourceTree = "<group>"; };
+		E8BE1D9A1C2364B300B55C4C /* modbus_tcp_pi_listen.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_tcp_pi_listen.txt; sourceTree = "<group>"; };
+		E8BE1D9B1C2364B300B55C4C /* modbus_write_and_read_registers.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_write_and_read_registers.txt; sourceTree = "<group>"; };
+		E8BE1D9C1C2364B300B55C4C /* modbus_write_bit.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_write_bit.txt; sourceTree = "<group>"; };
+		E8BE1D9D1C2364B300B55C4C /* modbus_write_bits.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_write_bits.txt; sourceTree = "<group>"; };
+		E8BE1D9E1C2364B300B55C4C /* modbus_write_register.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_write_register.txt; sourceTree = "<group>"; };
+		E8BE1D9F1C2364B300B55C4C /* modbus_write_registers.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modbus_write_registers.txt; sourceTree = "<group>"; };
+		E8F082791C1B796D0015143E /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E8ABD7FC1C14F6DA00CAEF69 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8ABD8101C14F6DA00CAEF69 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8ABD81B1C14F6DA00CAEF69 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E89881171C2296AB00F3B68E /* ObjectiveLibModbus */ = {
+			isa = PBXGroup;
+			children = (
+				E89881181C2296AB00F3B68E /* ObjectiveLibModbus.h */,
+				E89881191C2296AB00F3B68E /* ObjectiveLibModbus.m */,
+			);
+			name = ObjectiveLibModbus;
+			path = ../IOS_Modbus/ObjectiveLibModbus;
+			sourceTree = "<group>";
+		};
+		E898811A1C2296AB00F3B68E /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				E898811B1C2296AB00F3B68E /* libmodbus */,
+			);
+			name = Vendor;
+			path = ../IOS_Modbus/Vendor;
+			sourceTree = "<group>";
+		};
+		E898811B1C2296AB00F3B68E /* libmodbus */ = {
+			isa = PBXGroup;
+			children = (
+				E8BE1D641C2364B300B55C4C /* doc */,
+				E898811C1C2296AB00F3B68E /* AUTHORS */,
+				E898811D1C2296AB00F3B68E /* config.h */,
+				E898811E1C2296AB00F3B68E /* COPYING */,
+				E898811F1C2296AB00F3B68E /* COPYING.LESSER */,
+				E89881201C2296AB00F3B68E /* modbus-data.c */,
+				E89881211C2296AB00F3B68E /* modbus-private.h */,
+				E89881221C2296AB00F3B68E /* modbus-rtu-private.h */,
+				E89881231C2296AB00F3B68E /* modbus-rtu.c */,
+				E89881241C2296AB00F3B68E /* modbus-rtu.h */,
+				E89881251C2296AB00F3B68E /* modbus-tcp-private.h */,
+				E89881261C2296AB00F3B68E /* modbus-tcp.c */,
+				E89881271C2296AB00F3B68E /* modbus-tcp.h */,
+				E89881281C2296AB00F3B68E /* modbus-version.h */,
+				E89881291C2296AB00F3B68E /* modbus.c */,
+				E898812A1C2296AB00F3B68E /* modbus.h */,
+				E898812B1C2296AB00F3B68E /* NEWS */,
+				E898812C1C2296AB00F3B68E /* README.rst */,
+			);
+			path = libmodbus;
+			sourceTree = "<group>";
+		};
+		E8ABD7F61C14F6DA00CAEF69 = {
+			isa = PBXGroup;
+			children = (
+				E8ABD8011C14F6DA00CAEF69 /* IOS_Modbus */,
+				E8ABD8161C14F6DA00CAEF69 /* mb_1Tests */,
+				E8ABD8211C14F6DA00CAEF69 /* mb_1UITests */,
+				E8ABD8001C14F6DA00CAEF69 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E8ABD8001C14F6DA00CAEF69 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E8ABD7FF1C14F6DA00CAEF69 /* IOS_Modbus.app */,
+				E8ABD8131C14F6DA00CAEF69 /* IOS_Modbus.xctest */,
+				E8ABD81E1C14F6DA00CAEF69 /* IOS_Modbus.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E8ABD8011C14F6DA00CAEF69 /* IOS_Modbus */ = {
+			isa = PBXGroup;
+			children = (
+				E89881171C2296AB00F3B68E /* ObjectiveLibModbus */,
+				E898811A1C2296AB00F3B68E /* Vendor */,
+				E8ABD8021C14F6DA00CAEF69 /* AppDelegate.swift */,
+				E8ABD8061C14F6DA00CAEF69 /* Main.storyboard */,
+				E8ABD8041C14F6DA00CAEF69 /* MainViewController.swift */,
+				E8F082791C1B796D0015143E /* SettingsViewController.swift */,
+				E8ABD8091C14F6DA00CAEF69 /* Assets.xcassets */,
+				E8ABD80B1C14F6DA00CAEF69 /* LaunchScreen.storyboard */,
+				E8ABD8301C14F70500CAEF69 /* IOS_Modbus-Bridging-Header.h */,
+				E83384D21C2335B900139E3E /* Info.plist */,
+			);
+			path = IOS_Modbus;
+			sourceTree = "<group>";
+		};
+		E8ABD8161C14F6DA00CAEF69 /* mb_1Tests */ = {
+			isa = PBXGroup;
+			children = (
+				E8ABD8171C14F6DA00CAEF69 /* mb_1Tests.swift */,
+				E8ABD8191C14F6DA00CAEF69 /* Info.plist */,
+			);
+			path = mb_1Tests;
+			sourceTree = "<group>";
+		};
+		E8ABD8211C14F6DA00CAEF69 /* mb_1UITests */ = {
+			isa = PBXGroup;
+			children = (
+				E8ABD8221C14F6DA00CAEF69 /* mb_1UITests.swift */,
+				E8ABD8241C14F6DA00CAEF69 /* Info.plist */,
+			);
+			path = mb_1UITests;
+			sourceTree = "<group>";
+		};
+		E8BE1D641C2364B300B55C4C /* doc */ = {
+			isa = PBXGroup;
+			children = (
+				E8BE1D651C2364B300B55C4C /* libmodbus.txt */,
+				E8BE1D661C2364B300B55C4C /* modbus_close.txt */,
+				E8BE1D671C2364B300B55C4C /* modbus_connect.txt */,
+				E8BE1D681C2364B300B55C4C /* modbus_flush.txt */,
+				E8BE1D691C2364B300B55C4C /* modbus_free.txt */,
+				E8BE1D6A1C2364B300B55C4C /* modbus_get_byte_from_bits.txt */,
+				E8BE1D6B1C2364B300B55C4C /* modbus_get_byte_timeout.txt */,
+				E8BE1D6C1C2364B300B55C4C /* modbus_get_float.txt */,
+				E8BE1D6D1C2364B300B55C4C /* modbus_get_float_abcd.txt */,
+				E8BE1D6E1C2364B300B55C4C /* modbus_get_float_badc.txt */,
+				E8BE1D6F1C2364B300B55C4C /* modbus_get_float_cdab.txt */,
+				E8BE1D701C2364B300B55C4C /* modbus_get_float_dcba.txt */,
+				E8BE1D711C2364B300B55C4C /* modbus_get_header_length.txt */,
+				E8BE1D721C2364B300B55C4C /* modbus_get_response_timeout.txt */,
+				E8BE1D731C2364B300B55C4C /* modbus_get_socket.txt */,
+				E8BE1D741C2364B300B55C4C /* modbus_mapping_free.txt */,
+				E8BE1D751C2364B300B55C4C /* modbus_mapping_new.txt */,
+				E8BE1D761C2364B300B55C4C /* modbus_mapping_offset_new.txt */,
+				E8BE1D771C2364B300B55C4C /* modbus_mask_write_register.txt */,
+				E8BE1D781C2364B300B55C4C /* modbus_new_rtu.txt */,
+				E8BE1D791C2364B300B55C4C /* modbus_new_tcp.txt */,
+				E8BE1D7A1C2364B300B55C4C /* modbus_new_tcp_pi.txt */,
+				E8BE1D7B1C2364B300B55C4C /* modbus_read_bits.txt */,
+				E8BE1D7C1C2364B300B55C4C /* modbus_read_input_bits.txt */,
+				E8BE1D7D1C2364B300B55C4C /* modbus_read_input_registers.txt */,
+				E8BE1D7E1C2364B300B55C4C /* modbus_read_registers.txt */,
+				E8BE1D7F1C2364B300B55C4C /* modbus_receive.txt */,
+				E8BE1D801C2364B300B55C4C /* modbus_receive_confirmation.txt */,
+				E8BE1D811C2364B300B55C4C /* modbus_reply.txt */,
+				E8BE1D821C2364B300B55C4C /* modbus_reply_exception.txt */,
+				E8BE1D831C2364B300B55C4C /* modbus_report_slave_id.txt */,
+				E8BE1D841C2364B300B55C4C /* modbus_rtu_get_rts.txt */,
+				E8BE1D851C2364B300B55C4C /* modbus_rtu_get_rts_delay.txt */,
+				E8BE1D861C2364B300B55C4C /* modbus_rtu_get_serial_mode.txt */,
+				E8BE1D871C2364B300B55C4C /* modbus_rtu_set_custom_rts.txt */,
+				E8BE1D881C2364B300B55C4C /* modbus_rtu_set_rts.txt */,
+				E8BE1D891C2364B300B55C4C /* modbus_rtu_set_rts_delay.txt */,
+				E8BE1D8A1C2364B300B55C4C /* modbus_rtu_set_serial_mode.txt */,
+				E8BE1D8B1C2364B300B55C4C /* modbus_send_raw_request.txt */,
+				E8BE1D8C1C2364B300B55C4C /* modbus_set_bits_from_byte.txt */,
+				E8BE1D8D1C2364B300B55C4C /* modbus_set_bits_from_bytes.txt */,
+				E8BE1D8E1C2364B300B55C4C /* modbus_set_byte_timeout.txt */,
+				E8BE1D8F1C2364B300B55C4C /* modbus_set_debug.txt */,
+				E8BE1D901C2364B300B55C4C /* modbus_set_error_recovery.txt */,
+				E8BE1D911C2364B300B55C4C /* modbus_set_float.txt */,
+				E8BE1D921C2364B300B55C4C /* modbus_set_float_dcba.txt */,
+				E8BE1D931C2364B300B55C4C /* modbus_set_response_timeout.txt */,
+				E8BE1D941C2364B300B55C4C /* modbus_set_slave.txt */,
+				E8BE1D951C2364B300B55C4C /* modbus_set_socket.txt */,
+				E8BE1D961C2364B300B55C4C /* modbus_strerror.txt */,
+				E8BE1D971C2364B300B55C4C /* modbus_tcp_accept.txt */,
+				E8BE1D981C2364B300B55C4C /* modbus_tcp_listen.txt */,
+				E8BE1D991C2364B300B55C4C /* modbus_tcp_pi_accept.txt */,
+				E8BE1D9A1C2364B300B55C4C /* modbus_tcp_pi_listen.txt */,
+				E8BE1D9B1C2364B300B55C4C /* modbus_write_and_read_registers.txt */,
+				E8BE1D9C1C2364B300B55C4C /* modbus_write_bit.txt */,
+				E8BE1D9D1C2364B300B55C4C /* modbus_write_bits.txt */,
+				E8BE1D9E1C2364B300B55C4C /* modbus_write_register.txt */,
+				E8BE1D9F1C2364B300B55C4C /* modbus_write_registers.txt */,
+			);
+			path = doc;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E8ABD7FE1C14F6DA00CAEF69 /* IOS_Modbus */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8ABD8271C14F6DA00CAEF69 /* Build configuration list for PBXNativeTarget "IOS_Modbus" */;
+			buildPhases = (
+				E8ABD7FB1C14F6DA00CAEF69 /* Sources */,
+				E8ABD7FC1C14F6DA00CAEF69 /* Frameworks */,
+				E8ABD7FD1C14F6DA00CAEF69 /* Resources */,
+			);
+			buildRules = (
+				E83384D61C23363F00139E3E /* PBXBuildRule */,
+			);
+			dependencies = (
+			);
+			name = IOS_Modbus;
+			productName = mb_1;
+			productReference = E8ABD7FF1C14F6DA00CAEF69 /* IOS_Modbus.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E8ABD8121C14F6DA00CAEF69 /* IOS_ModbusTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8ABD82A1C14F6DA00CAEF69 /* Build configuration list for PBXNativeTarget "IOS_ModbusTests" */;
+			buildPhases = (
+				E8ABD80F1C14F6DA00CAEF69 /* Sources */,
+				E8ABD8101C14F6DA00CAEF69 /* Frameworks */,
+				E8ABD8111C14F6DA00CAEF69 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E8ABD8151C14F6DA00CAEF69 /* PBXTargetDependency */,
+			);
+			name = IOS_ModbusTests;
+			productName = mb_1Tests;
+			productReference = E8ABD8131C14F6DA00CAEF69 /* IOS_Modbus.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E8ABD81D1C14F6DA00CAEF69 /* IOS_ModbusUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8ABD82D1C14F6DA00CAEF69 /* Build configuration list for PBXNativeTarget "IOS_ModbusUITests" */;
+			buildPhases = (
+				E8ABD81A1C14F6DA00CAEF69 /* Sources */,
+				E8ABD81B1C14F6DA00CAEF69 /* Frameworks */,
+				E8ABD81C1C14F6DA00CAEF69 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E8ABD8201C14F6DA00CAEF69 /* PBXTargetDependency */,
+			);
+			name = IOS_ModbusUITests;
+			productName = mb_1UITests;
+			productReference = E8ABD81E1C14F6DA00CAEF69 /* IOS_Modbus.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E8ABD7F71C14F6DA00CAEF69 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Walter Marchewka";
+				TargetAttributes = {
+					E8ABD7FE1C14F6DA00CAEF69 = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = 3S476LML66;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
+						};
+					};
+					E8ABD8121C14F6DA00CAEF69 = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = E8ABD7FE1C14F6DA00CAEF69;
+					};
+					E8ABD81D1C14F6DA00CAEF69 = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = E8ABD7FE1C14F6DA00CAEF69;
+					};
+				};
+			};
+			buildConfigurationList = E8ABD7FA1C14F6DA00CAEF69 /* Build configuration list for PBXProject "IOS_Modbus" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E8ABD7F61C14F6DA00CAEF69;
+			productRefGroup = E8ABD8001C14F6DA00CAEF69 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E8ABD7FE1C14F6DA00CAEF69 /* IOS_Modbus */,
+				E8ABD8121C14F6DA00CAEF69 /* IOS_ModbusTests */,
+				E8ABD81D1C14F6DA00CAEF69 /* IOS_ModbusUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E8ABD7FD1C14F6DA00CAEF69 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8BE1DC21C2364B300B55C4C /* modbus_rtu_set_custom_rts.txt in Resources */,
+				E8BE1DB51C2364B300B55C4C /* modbus_new_tcp_pi.txt in Resources */,
+				E8BE1DB41C2364B300B55C4C /* modbus_new_tcp.txt in Resources */,
+				E8BE1DD91C2364B300B55C4C /* modbus_write_register.txt in Resources */,
+				E8BE1DA71C2364B300B55C4C /* modbus_get_float.txt in Resources */,
+				E8ABD80D1C14F6DA00CAEF69 /* LaunchScreen.storyboard in Resources */,
+				E8BE1DB21C2364B300B55C4C /* modbus_mask_write_register.txt in Resources */,
+				E8BE1DA61C2364B300B55C4C /* modbus_get_byte_timeout.txt in Resources */,
+				E8BE1DCE1C2364B300B55C4C /* modbus_set_response_timeout.txt in Resources */,
+				E8BE1DC71C2364B300B55C4C /* modbus_set_bits_from_byte.txt in Resources */,
+				E8BE1DA31C2364B300B55C4C /* modbus_flush.txt in Resources */,
+				E89881301C2296AB00F3B68E /* COPYING.LESSER in Resources */,
+				E8BE1DAE1C2364B300B55C4C /* modbus_get_socket.txt in Resources */,
+				E8BE1DC41C2364B300B55C4C /* modbus_rtu_set_rts_delay.txt in Resources */,
+				E8BE1DBB1C2364B300B55C4C /* modbus_receive_confirmation.txt in Resources */,
+				E8BE1DC51C2364B300B55C4C /* modbus_rtu_set_serial_mode.txt in Resources */,
+				E8BE1DC61C2364B300B55C4C /* modbus_send_raw_request.txt in Resources */,
+				E8BE1DA41C2364B300B55C4C /* modbus_free.txt in Resources */,
+				E8BE1DAD1C2364B300B55C4C /* modbus_get_response_timeout.txt in Resources */,
+				E8BE1DB31C2364B300B55C4C /* modbus_new_rtu.txt in Resources */,
+				E898812E1C2296AB00F3B68E /* AUTHORS in Resources */,
+				E8BE1DD71C2364B300B55C4C /* modbus_write_bit.txt in Resources */,
+				E8BE1DB71C2364B300B55C4C /* modbus_read_input_bits.txt in Resources */,
+				E8BE1DBE1C2364B300B55C4C /* modbus_report_slave_id.txt in Resources */,
+				E8BE1DAA1C2364B300B55C4C /* modbus_get_float_cdab.txt in Resources */,
+				E8BE1DA81C2364B300B55C4C /* modbus_get_float_abcd.txt in Resources */,
+				E8BE1DBD1C2364B300B55C4C /* modbus_reply_exception.txt in Resources */,
+				E8BE1DD11C2364B300B55C4C /* modbus_strerror.txt in Resources */,
+				E8BE1DB01C2364B300B55C4C /* modbus_mapping_new.txt in Resources */,
+				E8BE1DA11C2364B300B55C4C /* modbus_close.txt in Resources */,
+				E8BE1DAB1C2364B300B55C4C /* modbus_get_float_dcba.txt in Resources */,
+				E89881351C2296AB00F3B68E /* NEWS in Resources */,
+				E8BE1DBC1C2364B300B55C4C /* modbus_reply.txt in Resources */,
+				E8BE1DCC1C2364B300B55C4C /* modbus_set_float.txt in Resources */,
+				E8BE1DCA1C2364B300B55C4C /* modbus_set_debug.txt in Resources */,
+				E8BE1DD31C2364B300B55C4C /* modbus_tcp_listen.txt in Resources */,
+				E8BE1DC11C2364B300B55C4C /* modbus_rtu_get_serial_mode.txt in Resources */,
+				E8ABD80A1C14F6DA00CAEF69 /* Assets.xcassets in Resources */,
+				E8BE1DD61C2364B300B55C4C /* modbus_write_and_read_registers.txt in Resources */,
+				E898812F1C2296AB00F3B68E /* COPYING in Resources */,
+				E8BE1DA01C2364B300B55C4C /* libmodbus.txt in Resources */,
+				E8BE1DD01C2364B300B55C4C /* modbus_set_socket.txt in Resources */,
+				E8BE1DC01C2364B300B55C4C /* modbus_rtu_get_rts_delay.txt in Resources */,
+				E8BE1DD51C2364B300B55C4C /* modbus_tcp_pi_listen.txt in Resources */,
+				E8BE1DD81C2364B300B55C4C /* modbus_write_bits.txt in Resources */,
+				E8ABD8081C14F6DA00CAEF69 /* Main.storyboard in Resources */,
+				E8BE1DD41C2364B300B55C4C /* modbus_tcp_pi_accept.txt in Resources */,
+				E8BE1DAC1C2364B300B55C4C /* modbus_get_header_length.txt in Resources */,
+				E8BE1DB91C2364B300B55C4C /* modbus_read_registers.txt in Resources */,
+				E8BE1DAF1C2364B300B55C4C /* modbus_mapping_free.txt in Resources */,
+				E8BE1DCF1C2364B300B55C4C /* modbus_set_slave.txt in Resources */,
+				E8BE1DBA1C2364B300B55C4C /* modbus_receive.txt in Resources */,
+				E8BE1DA91C2364B300B55C4C /* modbus_get_float_badc.txt in Resources */,
+				E8BE1DC81C2364B300B55C4C /* modbus_set_bits_from_bytes.txt in Resources */,
+				E8BE1DD21C2364B300B55C4C /* modbus_tcp_accept.txt in Resources */,
+				E8BE1DA51C2364B300B55C4C /* modbus_get_byte_from_bits.txt in Resources */,
+				E8BE1DB11C2364B300B55C4C /* modbus_mapping_offset_new.txt in Resources */,
+				E8BE1DC91C2364B300B55C4C /* modbus_set_byte_timeout.txt in Resources */,
+				E8BE1DB61C2364B300B55C4C /* modbus_read_bits.txt in Resources */,
+				E8BE1DC31C2364B300B55C4C /* modbus_rtu_set_rts.txt in Resources */,
+				E8BE1DCB1C2364B300B55C4C /* modbus_set_error_recovery.txt in Resources */,
+				E8BE1DA21C2364B300B55C4C /* modbus_connect.txt in Resources */,
+				E8BE1DCD1C2364B300B55C4C /* modbus_set_float_dcba.txt in Resources */,
+				E8BE1DB81C2364B300B55C4C /* modbus_read_input_registers.txt in Resources */,
+				E89881361C2296AB00F3B68E /* README.rst in Resources */,
+				E8BE1DBF1C2364B300B55C4C /* modbus_rtu_get_rts.txt in Resources */,
+				E8BE1DDA1C2364B300B55C4C /* modbus_write_registers.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8ABD8111C14F6DA00CAEF69 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8ABD81C1C14F6DA00CAEF69 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E8ABD7FB1C14F6DA00CAEF69 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8ABD8051C14F6DA00CAEF69 /* MainViewController.swift in Sources */,
+				E89881331C2296AB00F3B68E /* modbus-tcp.c in Sources */,
+				E89881311C2296AB00F3B68E /* modbus-data.c in Sources */,
+				E89881341C2296AB00F3B68E /* modbus.c in Sources */,
+				E8ABD8031C14F6DA00CAEF69 /* AppDelegate.swift in Sources */,
+				E8F0827A1C1B796D0015143E /* SettingsViewController.swift in Sources */,
+				E898812D1C2296AB00F3B68E /* ObjectiveLibModbus.m in Sources */,
+				E89881321C2296AB00F3B68E /* modbus-rtu.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8ABD80F1C14F6DA00CAEF69 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8ABD8181C14F6DA00CAEF69 /* mb_1Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8ABD81A1C14F6DA00CAEF69 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8ABD8231C14F6DA00CAEF69 /* mb_1UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E8ABD8151C14F6DA00CAEF69 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E8ABD7FE1C14F6DA00CAEF69 /* IOS_Modbus */;
+			targetProxy = E8ABD8141C14F6DA00CAEF69 /* PBXContainerItemProxy */;
+		};
+		E8ABD8201C14F6DA00CAEF69 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E8ABD7FE1C14F6DA00CAEF69 /* IOS_Modbus */;
+			targetProxy = E8ABD81F1C14F6DA00CAEF69 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E8ABD8061C14F6DA00CAEF69 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E8ABD8071C14F6DA00CAEF69 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E8ABD80B1C14F6DA00CAEF69 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E8ABD80C1C14F6DA00CAEF69 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E8ABD8251C14F6DA00CAEF69 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E8ABD8261C14F6DA00CAEF69 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E8ABD8281C14F6DA00CAEF69 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEFINES_MODULE = NO;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
+				INFOPLIST_FILE = IOS_Modbus/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.waltermarchewka.IOSModbus;
+				PRODUCT_NAME = IOS_Modbus;
+				SWIFT_OBJC_BRIDGING_HEADER = "IOS_Modbus/IOS_Modbus-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		E8ABD8291C14F6DA00CAEF69 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEFINES_MODULE = NO;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
+				INFOPLIST_FILE = IOS_Modbus/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.waltermarchewka.IOSModbus;
+				PRODUCT_NAME = IOS_Modbus;
+				SWIFT_OBJC_BRIDGING_HEADER = "IOS_Modbus/IOS_Modbus-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		E8ABD82B1C14F6DA00CAEF69 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = mb_1Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.waltermarchewka.mb-1Tests";
+				PRODUCT_NAME = IOS_Modbus;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IOS_Modbus.app/IOS_Modbus";
+			};
+			name = Debug;
+		};
+		E8ABD82C1C14F6DA00CAEF69 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = mb_1Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.waltermarchewka.mb-1Tests";
+				PRODUCT_NAME = IOS_Modbus;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IOS_Modbus.app/IOS_Modbus";
+			};
+			name = Release;
+		};
+		E8ABD82E1C14F6DA00CAEF69 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = mb_1UITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.waltermarchewka.mb-1UITests";
+				PRODUCT_NAME = IOS_Modbus;
+				TEST_TARGET_NAME = mb_1;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		E8ABD82F1C14F6DA00CAEF69 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = mb_1UITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.waltermarchewka.mb-1UITests";
+				PRODUCT_NAME = IOS_Modbus;
+				TEST_TARGET_NAME = mb_1;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E8ABD7FA1C14F6DA00CAEF69 /* Build configuration list for PBXProject "IOS_Modbus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8ABD8251C14F6DA00CAEF69 /* Debug */,
+				E8ABD8261C14F6DA00CAEF69 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E8ABD8271C14F6DA00CAEF69 /* Build configuration list for PBXNativeTarget "IOS_Modbus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8ABD8281C14F6DA00CAEF69 /* Debug */,
+				E8ABD8291C14F6DA00CAEF69 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E8ABD82A1C14F6DA00CAEF69 /* Build configuration list for PBXNativeTarget "IOS_ModbusTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8ABD82B1C14F6DA00CAEF69 /* Debug */,
+				E8ABD82C1C14F6DA00CAEF69 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E8ABD82D1C14F6DA00CAEF69 /* Build configuration list for PBXNativeTarget "IOS_ModbusUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8ABD82E1C14F6DA00CAEF69 /* Debug */,
+				E8ABD82F1C14F6DA00CAEF69 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E8ABD7F71C14F6DA00CAEF69 /* Project object */;
+}
