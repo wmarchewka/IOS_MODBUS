@@ -237,6 +237,7 @@ class ViewController: UIViewController, DestinationViewDelegate {
         let errorString = Error.localizedDescription
         print(errorString)
         log = errorString + "\n" + log
+        print("i")
     }
     
     
