@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  mb_1
+//  
 //
 //  Created by Walter Marchewka on 12/6/15.
 //  Copyright © 2015 Walter Marchewka. All rights reserved.
@@ -12,14 +12,12 @@ var glbIpAddress = "10.0.0.202"
 
 import UIKit
 
-import CoreMotion
-
 let objLibModbus = ObjectiveLibModbus(TCP: glbIpAddress, port: 502, device: 1)
 
 var log = ""
 
 
-class ViewController: UIViewController, DestinationViewDelegate {
+class ViewController: UIViewController, SettingsViewDelegate, GraphicsViewDelegate {
     
     var Timer = NSTimer()
     
@@ -135,16 +133,20 @@ class ViewController: UIViewController, DestinationViewDelegate {
         }
     }
     
-    // Called from the destination controller via delegation
+    // Called from the settingsviewcontroller via delegation
     func setIPAddress(ipAddress: String) {
         txtIPAddress.text=ipAddress
         glbIpAddress=ipAddress
     }
     
-    // Called from the destination controller via delegation
+    // Received from the SettingsViewController via delegation
     func  setAwake(Awake: Bool) {
         UIApplication.sharedApplication().idleTimerDisabled = Awake
-        
+    }
+    
+    // Received from the GraphicsViewController via delegation
+    func  setTestButtonVal(testButtonVal: Bool) {
+        UIApplication.sharedApplication().idleTimerDisabled = testButtonVal
     }
     
     @IBAction func sendRegister(sender : AnyObject) {

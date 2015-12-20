@@ -62,37 +62,42 @@
             </objects>
             <point key="canvasLocation" x="1636.5" y="685.5"/>
         </scene>
-        <!--Data View Controller-->
-        <scene sceneID="WFv-L0-y2Z">
+        <!--Graphics View Controller-->
+        <scene sceneID="aXD-2r-3GM">
             <objects>
-                <viewController id="0eo-IS-Kds" customClass="DataViewController" sceneMemberID="viewController">
+                <viewController id="gSO-1t-fSD" customClass="GraphicsViewController" customModule="IOS_Modbus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="heH-rI-ErM"/>
-                        <viewControllerLayoutGuide type="bottom" id="BEu-cm-dfR"/>
+                        <viewControllerLayoutGuide type="top" id="1vI-tq-iSc"/>
+                        <viewControllerLayoutGuide type="bottom" id="aoQ-3I-uAI"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Kb0-Da-ZR9">
+                    <view key="view" contentMode="scaleToFill" id="UFX-Vd-E7x">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DataView" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DVn-GO-2Nf" userLabel="DataView">
-                                <rect key="frame" x="140" y="72" width="72" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="00u-Jo-brd">
+                                <rect key="frame" x="25" y="133" width="324" height="444"/>
+                            </imageView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TIB-eg-9s9">
+                                <rect key="frame" x="163" y="616" width="51" height="31"/>
+                                <connections>
+                                    <action selector="setTestButtonChanged:" destination="gSO-1t-fSD" eventType="valueChanged" id="hyh-W9-tWX"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="qaf-mK-U4U"/>
+                    <connections>
+                        <outlet property="imageView" destination="00u-Jo-brd" id="uJs-ze-IQx"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hew-Ra-R3q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Y5-tO-QBd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2482.5" y="722.5"/>
+            <point key="canvasLocation" x="2290.5" y="664.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="IOS_Modbus" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="Main View Controller" customClass="ViewController" customModule="IOS_Modbus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -235,13 +240,6 @@
                                     <segue destination="G5R-PP-Jct" kind="show" identifier="showSettingsViewController" id="sJU-0q-QiR"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tvz-1v-9km">
-                                <rect key="frame" x="251" y="617" width="68" height="30"/>
-                                <state key="normal" title="Data view"/>
-                                <connections>
-                                    <segue destination="0eo-IS-Kds" kind="show" identifier="showDataViewController" id="ptD-cM-8zk"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="IP Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XXC-Sw-Ln8">
                                 <rect key="frame" x="159" y="81" width="134" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -268,6 +266,13 @@
                                 <state key="normal" title="Open conn"/>
                                 <connections>
                                     <action selector="openConnection:" destination="BYZ-38-t0r" eventType="touchDown" id="iWN-EI-0Al"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tvz-1v-9km">
+                                <rect key="frame" x="251" y="617" width="68" height="30"/>
+                                <state key="normal" title="Data view"/>
+                                <connections>
+                                    <segue destination="gSO-1t-fSD" kind="show" id="qEE-mF-K3Q"/>
                                 </connections>
                             </button>
                         </subviews>
