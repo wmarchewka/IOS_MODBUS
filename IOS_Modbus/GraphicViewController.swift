@@ -10,8 +10,8 @@ import UIKit
 
 protocol GraphicsViewDelegate {
     //    func setIPAddress(ipAddress: String);
-    func setTestButtonVal(testButtonVal: Bool);
-    func TestReturnFunction() -> Array<UInt16>;
+    func DG_setTestButtonVal(testButtonVal: Bool);
+    func DG_TestReturnFunction() -> Array<UInt16>;
 }
 
 class GraphicsViewController: UIViewController {
@@ -54,7 +54,7 @@ class GraphicsViewController: UIViewController {
 
     func Update() {
 
-        let glbioPins:[UInt16] = delegate.TestReturnFunction()
+        let glbioPins:[UInt16] = delegate.DG_TestReturnFunction()
         for var pin=0; pin < 17; pin++ {
             if glbioPins[pin]==1 {
                 DrawGreenLed(pin)
@@ -119,7 +119,7 @@ class GraphicsViewController: UIViewController {
     }
     
     @IBAction func TestSwitchPushed(sender: UISwitch) {
-        delegate.setTestButtonVal(sender.on)
+        delegate.DG_setTestButtonVal(sender.on)
         
     }
     

@@ -10,9 +10,8 @@
 import UIKit
 
 protocol SettingsViewDelegate {
-    func setIPAddress(ipAddress: String);
-    
-    func setAwake(Awake: Bool);
+    func DG_setIPAddress(ipAddress: String);
+    func DG_setAwake(Awake: Bool);
 }
 
 class SettingsViewController: UIViewController{
@@ -36,7 +35,7 @@ class SettingsViewController: UIViewController{
       // Sets the ip address delegate (MainViewController) and then pops to the root view
     @IBAction func ipChanged(sender: UITextField) {
         if let name = sender.text {
-            delegate.setIPAddress(name)
+            delegate.DG_setIPAddress(name)
             self.navigationController?.popToRootViewControllerAnimated(true)
         } else {
             print("title is nil")
@@ -44,7 +43,7 @@ class SettingsViewController: UIViewController{
     }
     
     @IBAction func setAwakeChanged(sender: UISwitch) {
-            delegate.setAwake(sender.on)
+            delegate.DG_setAwake(sender.on)
             //self.navigationController?.popToRootViewControllerAnimated(true)
         }
 }
