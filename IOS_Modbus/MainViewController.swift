@@ -1,72 +1,83 @@
-//
-//  ViewController.swift
-//
-//
-//  Created by Walter Marchewka on 12/6/15.
-//  Copyright © 2015 Walter Marchewka. All rights reserved.
-//
+/*
+ViewController.swift
+
+Created by Walter Marchewka on 12/6/15.
+Copyright © 2015 Walter Marchewka. All rights reserved.
+*
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this software and associated documentation files (the "Software"), to deal
+* in the Software without restriction, including without limitation the rights
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Software, and to permit persons to whom the Software is
+* furnished to do so, subject to the following conditions:
+*
+* The above copyright notice and this permission notice shall be included in
+* all copies or substantial portions of the Software.
+*
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+* THE SOFTWARE.
+*/
 
 import UIKit
 
-var glbOkToFire = true
+
 
 class ViewController: UIViewController, SettingsViewDelegate, GraphicsViewDelegate {
 
     var glbIpAddress = "10.0.0.202"
     var glbSendError = false
-    var ReadyToSend = true
     var log = ""
 
-
-    var SendPacketCounter=0
+    var sendPacketCounter=0
     var glbTimerCounter = 0
     var testCounter = 0
 
 
+    @IBOutlet weak var lblBatteryVoltageVal: UILabel!
+    @IBOutlet weak var lblErrorVal: UILabel!
+    @IBOutlet weak var lblIpAddressVal: UILabel!
+    @IBOutlet weak var lblIdVal: UILabel!
+    @IBOutlet weak var lblRssiSignalVal: UILabel!
+    @IBOutlet weak var lblSendCounterVal: UILabel!
 
-    @IBOutlet weak var IdLabel: UILabel!
-    @IBOutlet weak var SendCounter: UILabel!
-    @IBOutlet weak var connectedLabel: UILabel!
-    @IBOutlet weak var rssiSignalLabel: UILabel!
-    @IBOutlet weak var errorLabel: UILabel!
-    @IBOutlet weak var BatteryVoltageLabel: UILabel!
-    @IBOutlet weak var txtIPAddress: UILabel!
-
-    @IBOutlet weak var txtWriteRegister: UITextField!
-    @IBOutlet weak var txtReadRegister: UITextField!
-    @IBOutlet weak var txtReturnRegisters: UITextField!
-    @IBOutlet weak var txtCoilRegister: UITextField!
-    @IBOutlet weak var txtWriteRegisterValue: UITextField!
     @IBOutlet weak var txtAutoPollTime: UITextField!
+    @IBOutlet weak var txtCoilRegister: UITextField!
     @IBOutlet weak var txtNumberofReadRegisters: UITextField!
+    @IBOutlet weak var txtReadRegister: UITextField!
+    @IBOutlet weak var txtWriteRegister: UITextField!
+    @IBOutlet weak var txtWriteRegisterValue: UITextField!
 
     @IBOutlet weak var switchCoilValue: UISwitch!
-    @IBOutlet weak var autoPollButton: UISwitch!
+    @IBOutlet weak var switchAutoPoll: UISwitch!
 
-    @IBOutlet weak var writeRegistersButton: UIButton!
-    @IBOutlet weak var writeRegisterButton: UIButton!
-    @IBOutlet weak var readRegisterButton: UIButton!
-    @IBOutlet weak var writeCoilButton: UIButton!
-    @IBOutlet weak var txtDebugOff: UIButton!
-    @IBOutlet weak var txtDebugON: UIButton!
-    @IBOutlet weak var txtUpdateButton: UIButton!
-    @IBOutlet weak var testbutton: UIButton!
-    @IBOutlet weak var rebootButton: UIButton!
-    @IBOutlet weak var clearLogButton: UIButton!
-    @IBOutlet weak var registerDefButton: UIButton!
+    @IBOutlet weak var btnClearLog: UIButton!
+    @IBOutlet weak var btnDebugOff: UIButton!
+    @IBOutlet weak var btnDebugON: UIButton!
+    @IBOutlet weak var btnReboot: UIButton!
+    @IBOutlet weak var btnRegisterDef: UIButton!
+    @IBOutlet weak var btnReadRegister: UIButton!
+    @IBOutlet weak var btnUpdate: UIButton!
+    @IBOutlet weak var btnWriteCoil: UIButton!
+    @IBOutlet weak var btnWriteRegisters: UIButton!
+    @IBOutlet weak var btnWriteRegister: UIButton!
 
-    @IBOutlet weak var LED16: UIImageView!
 
-    @IBOutlet weak var CoilRegisterStepper: UIStepper!
+    @IBOutlet weak var imvLED16: UIImageView!
 
-    @IBOutlet weak var txtViewError: UITextView!
+    @IBOutlet weak var stpCoilRegister: UIStepper!
+
+    @IBOutlet weak var txtvLog: UITextView!
 
     var stream1 = StreamClass()
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        SetupViewUI()
+        LC_SetupViewUI()
     }
 
     //this listens for call back from the seques create to other viewcontrolls
@@ -92,11 +103,7 @@ class ViewController: UIViewController, SettingsViewDelegate, GraphicsViewDelega
         //writeSingleCoil(20,DataByte: 0)
     }
 
-    @IBAction func TestButtonPushed(sender: AnyObject) {
-
-    }
-
-    @IBAction func IB_txtDebugOnPushed(sender: AnyObject) {
+    @IBAction func IB_DebugOnPushed(sender: AnyObject) {
         NSLog("Debug on pushed")
         //      writeSingleCoil(21,DataByte: 0)
 
@@ -121,21 +128,22 @@ class ViewController: UIViewController, SettingsViewDelegate, GraphicsViewDelega
         NSLog("packet added to outgoing queue")
     }
 
-    @IBAction func IB_clearlogButtonPushed(sender: AnyObject) {
+    @IBAction func IB_ClearLogButtonPushed(sender: AnyObject) {
         NSLog("Clear Log pushed")
         log=""
-        self.txtViewError.text=log
+        self.txtvLog.text=log
     }
 
-    @IBAction func IB_txtDebugOffPushed(sender: AnyObject) {
+    @IBAction func IB_DebugOffPushed(sender: AnyObject) {
         NSLog("GDebug off pushed")
         //writeSingleCoil(21,DataByte: 0xff00)
     }
+
     @IBAction func IB_AutoSendButtonToggled(sender: AnyObject) {
-        AutoSendButtonPushed(autoPollButton.on)
+        LC_AutoSendButtonPushed(switchAutoPoll.on)
     }
 
-    @IBAction func IB_txtUpdatePushed(sender: AnyObject) {
+    @IBAction func IB_UpdatePushed(sender: AnyObject) {
         NSLog("OTA update button pushed")
         //writeSingleCoil(20,DataByte: 0xff00)
     }
@@ -145,14 +153,14 @@ class ViewController: UIViewController, SettingsViewDelegate, GraphicsViewDelega
         NSLog("Auto send timer killed")
         glbOkToFire=false
         NSLog("OK to fire is false")
-        autoPollButton.on=false
+        switchAutoPoll.on=false
         NSLog("Auto poll button is false")
         NSLog("Autopoll time changed")
         let newTime=(Double(txtAutoPollTime.text!)!)/1000
         stream1.SetupTimers(newTime)
         glbOkToFire=true
         NSLog("OK to fire set to true")
-        autoPollButton.on=true
+        switchAutoPoll.on=true
         NSLog("Auto poll button is true")
     }
 
@@ -175,7 +183,7 @@ class ViewController: UIViewController, SettingsViewDelegate, GraphicsViewDelega
         NSLog("packet added to outgoing queue")
     }
 
-    @IBAction func IB_coilRegisterChanged(sender: UIStepper) {
+    @IBAction func IB_coilStepperRegisterChanged(sender: UIStepper) {
         NSLog("Coil register stepper pushed")
         txtCoilRegister.text=Int(sender.value).description
     }
@@ -214,7 +222,7 @@ class ViewController: UIViewController, SettingsViewDelegate, GraphicsViewDelega
 
     func DG_setIPAddress(ipAddress: String) {
         NSLog("set IP Address called")
-        txtIPAddress.text=ipAddress
+        lblIpAddressVal.text=ipAddress
         glbIpAddress=ipAddress
     }
 
@@ -234,21 +242,21 @@ class ViewController: UIViewController, SettingsViewDelegate, GraphicsViewDelega
         UIApplication.sharedApplication().idleTimerDisabled = Awake
     }
 
-    func AutoSendButtonPushed(state: Bool ) {
+    func LC_AutoSendButtonPushed(state: Bool ) {
         if state==false {
             NSLog("Auto poll button is off")
             stream1.StopAutoSendTimer()
             NSLog("Auto send timer terminated")
             glbOkToFire=false
             NSLog("OK to fire set to false")
-            autoPollButton.on=false
+            switchAutoPoll.on=false
         }
         else{
             NSLog("Auto poll button is on")
             stream1.SetupTimers(0.100)
             glbOkToFire=true
             NSLog("OK to fire set to true")
-            autoPollButton.on=true
+            switchAutoPoll.on=true
         }
     }
 
@@ -264,47 +272,49 @@ class ViewController: UIViewController, SettingsViewDelegate, GraphicsViewDelega
     }
 
  
-    func SetupViewUI(){
+    func LC_SetupViewUI(){
+
         txtWriteRegister.text="5"
         txtReadRegister.text="23"
         txtCoilRegister.text="5"
         txtWriteRegisterValue.text="65521"
-        txtIPAddress.text=glbIpAddress
-        connectedLabel.text="Waiting connection"
         txtAutoPollTime.text=String(glbAutoSendTimerValue)
-        autoPollButton.on=true
         txtNumberofReadRegisters.text="2"
 
-        writeRegisterButton.layer.backgroundColor = UIColor.blackColor().CGColor
-        writeRegisterButton.layer.borderWidth = 3
-        writeRegisterButton.layer.borderColor = UIColor.whiteColor().CGColor
-        writeRegisterButton.layer.cornerRadius = 10
-        writeRegisterButton.tintColor = UIColor.yellowColor()
+        lblIpAddressVal.text=glbIpAddress
 
-        writeRegistersButton.layer.backgroundColor = UIColor.blackColor().CGColor
-        writeRegistersButton.layer.borderWidth = 3
-        writeRegistersButton.layer.borderColor = UIColor.whiteColor().CGColor
-        writeRegistersButton.layer.cornerRadius = 10
-        writeRegistersButton.tintColor = UIColor.yellowColor()
-
-        readRegisterButton.layer.backgroundColor = UIColor.blackColor().CGColor
-        readRegisterButton.layer.borderWidth = 3
-        readRegisterButton.layer.borderColor = UIColor.whiteColor().CGColor
-        readRegisterButton.layer.cornerRadius = 10
-        readRegisterButton.tintColor = UIColor.yellowColor()
-
-        writeCoilButton.layer.backgroundColor = UIColor.blackColor().CGColor
-        writeCoilButton.layer.borderWidth = 3
-        writeCoilButton.layer.borderColor = UIColor.whiteColor().CGColor
-        writeCoilButton.layer.cornerRadius = 10
-        writeCoilButton.tintColor = UIColor.yellowColor()
-        
-        CoilRegisterStepper.wraps = true
-        CoilRegisterStepper.autorepeat = true
-        CoilRegisterStepper.maximumValue = 50
-        CoilRegisterStepper.minimumValue = 0
-        autoPollButton.on=false
+        switchAutoPoll.on=false
         glbConnectionOpen=false
+
+        btnWriteRegister.layer.backgroundColor = UIColor.blackColor().CGColor
+        btnWriteRegister.layer.borderWidth = 3
+        btnWriteRegister.layer.borderColor = UIColor.whiteColor().CGColor
+        btnWriteRegister.layer.cornerRadius = 10
+        btnWriteRegister.tintColor = UIColor.yellowColor()
+
+        btnWriteRegisters.layer.backgroundColor = UIColor.blackColor().CGColor
+        btnWriteRegisters.layer.borderWidth = 3
+        btnWriteRegisters.layer.borderColor = UIColor.whiteColor().CGColor
+        btnWriteRegisters.layer.cornerRadius = 10
+        btnWriteRegisters.tintColor = UIColor.yellowColor()
+
+        btnReadRegister.layer.backgroundColor = UIColor.blackColor().CGColor
+        btnReadRegister.layer.borderWidth = 3
+        btnReadRegister.layer.borderColor = UIColor.whiteColor().CGColor
+        btnReadRegister.layer.cornerRadius = 10
+        btnReadRegister.tintColor = UIColor.yellowColor()
+
+        btnWriteCoil.layer.backgroundColor = UIColor.blackColor().CGColor
+        btnWriteCoil.layer.borderWidth = 3
+        btnWriteCoil.layer.borderColor = UIColor.whiteColor().CGColor
+        btnWriteCoil.layer.cornerRadius = 10
+        btnWriteCoil.tintColor = UIColor.yellowColor()
+        
+        stpCoilRegister.wraps = true
+        stpCoilRegister.autorepeat = true
+        stpCoilRegister.maximumValue = 50
+        stpCoilRegister.minimumValue = 0
+
         
     }
 }

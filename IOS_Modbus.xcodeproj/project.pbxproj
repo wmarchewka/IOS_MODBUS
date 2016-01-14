@@ -9,10 +9,8 @@
 /* Begin PBXBuildFile section */
 		E814C0A91C409CC300B4B619 /* Indicators.swift in Sources */ = {isa = PBXBuildFile; fileRef = E814C0A81C409CC300B4B619 /* Indicators.swift */; };
 		E814C0AB1C430E7400B4B619 /* BackgroundUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E814C0AA1C430E7400B4B619 /* BackgroundUtils.swift */; };
-		E814C0AD1C43128600B4B619 /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E814C0AC1C43128600B4B619 /* Singleton.swift */; };
 		E82F720B1C270137004C7277 /* GraphicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82F720A1C270137004C7277 /* GraphicViewController.swift */; };
 		E8A70BFE1C3C684200D5EA7C /* Streaming.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A70BFD1C3C684200D5EA7C /* Streaming.swift */; };
-		E8A70C021C3C6E0000D5EA7C /* Commands.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A70C011C3C6E0000D5EA7C /* Commands.swift */; };
 		E8ABD8031C14F6DA00CAEF69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ABD8021C14F6DA00CAEF69 /* AppDelegate.swift */; };
 		E8ABD8051C14F6DA00CAEF69 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ABD8041C14F6DA00CAEF69 /* MainViewController.swift */; };
 		E8ABD8081C14F6DA00CAEF69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8ABD8061C14F6DA00CAEF69 /* Main.storyboard */; };
@@ -36,11 +34,9 @@
 /* Begin PBXFileReference section */
 		E814C0A81C409CC300B4B619 /* Indicators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Indicators.swift; sourceTree = "<group>"; };
 		E814C0AA1C430E7400B4B619 /* BackgroundUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundUtils.swift; sourceTree = "<group>"; };
-		E814C0AC1C43128600B4B619 /* Singleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 		E82F720A1C270137004C7277 /* GraphicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphicViewController.swift; sourceTree = "<group>"; };
 		E83384D21C2335B900139E3E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8A70BFD1C3C684200D5EA7C /* Streaming.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Streaming.swift; sourceTree = "<group>"; };
-		E8A70C011C3C6E0000D5EA7C /* Commands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Commands.swift; sourceTree = "<group>"; };
 		E8ABD7FF1C14F6DA00CAEF69 /* IOS_Modbus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOS_Modbus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8ABD8021C14F6DA00CAEF69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../IOS_Modbus/AppDelegate.swift; sourceTree = "<group>"; };
 		E8ABD8041C14F6DA00CAEF69 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -89,10 +85,8 @@
 				E8ABD80B1C14F6DA00CAEF69 /* LaunchScreen.storyboard */,
 				E83384D21C2335B900139E3E /* Info.plist */,
 				E8A70BFD1C3C684200D5EA7C /* Streaming.swift */,
-				E8A70C011C3C6E0000D5EA7C /* Commands.swift */,
 				E814C0A81C409CC300B4B619 /* Indicators.swift */,
 				E814C0AA1C430E7400B4B619 /* BackgroundUtils.swift */,
-				E814C0AC1C43128600B4B619 /* Singleton.swift */,
 			);
 			path = IOS_Modbus;
 			sourceTree = "<group>";
@@ -176,9 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8A70BFE1C3C684200D5EA7C /* Streaming.swift in Sources */,
-				E814C0AD1C43128600B4B619 /* Singleton.swift in Sources */,
 				E814C0AB1C430E7400B4B619 /* BackgroundUtils.swift in Sources */,
-				E8A70C021C3C6E0000D5EA7C /* Commands.swift in Sources */,
 				E814C0A91C409CC300B4B619 /* Indicators.swift in Sources */,
 				E8ABD8051C14F6DA00CAEF69 /* MainViewController.swift in Sources */,
 				E8ABD8031C14F6DA00CAEF69 /* AppDelegate.swift in Sources */,

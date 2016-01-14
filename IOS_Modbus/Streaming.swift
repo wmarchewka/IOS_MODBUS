@@ -29,6 +29,9 @@ var glbConnectionOpen:Bool=false
 var glbioPins:[UInt16] = [UInt16](count:100, repeatedValue:0)
 var Timer = NSTimer()
 var glbAutoSendTimerValue:Double = 0.100
+var glbOkToFire = true
+var glbOutgoingBytes:[UInt8] = []
+
 
 class StreamClass: NSObject, NSStreamDelegate {
 

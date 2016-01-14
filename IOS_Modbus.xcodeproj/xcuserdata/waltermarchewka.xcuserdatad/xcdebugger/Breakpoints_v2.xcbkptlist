@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "IOS_Modbus/MainViewController.swift"
-            timestampString = "474434581.920808"
+            timestampString = "474441363.352609"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "162"
-            endingLineNumber = "162"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
             landmarkName = "IB_writeSingleCoil(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,13 +26,295 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "IOS_Modbus/MainViewController.swift"
-            timestampString = "474434681.877214"
+            timestampString = "474441363.352609"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
             landmarkName = "IB_AutoSendButtonToggled(_:)"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IOS_Modbus/MainViewController.swift"
+            timestampString = "474441363.352609"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "277"
+            endingLineNumber = "277"
+            landmarkName = "LC_SetupViewUI()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IOS_Modbus/MainViewController.swift"
+            timestampString = "474441363.352609"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IOS_Modbus/MainViewController.swift"
+            timestampString = "474443654.245333"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "ViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IOS_Modbus.ViewController.glbIpAddress.getter : Swift.String"
+                  moduleName = "IOS_Modbus"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/waltermarchewka/Documents/IOS_Programming/IOS_Modbus/IOS_Modbus/MainViewController.swift"
+                  timestampString = "474443767.777648"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IOS_Modbus.ViewController.glbIpAddress.setter : Swift.String"
+                  moduleName = "IOS_Modbus"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/waltermarchewka/Documents/IOS_Programming/IOS_Modbus/IOS_Modbus/MainViewController.swift"
+                  timestampString = "474443767.778087"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IOS_Modbus.ViewController.glbIpAddress.materializeForSet : Swift.String"
+                  moduleName = "IOS_Modbus"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/waltermarchewka/Documents/IOS_Programming/IOS_Modbus/IOS_Modbus/MainViewController.swift"
+                  timestampString = "474443767.778453"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IOS_Modbus.ViewController.init (IOS_Modbus.ViewController.Type)(coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;IOS_Modbus.ViewController&gt;"
+                  moduleName = "IOS_Modbus"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/waltermarchewka/Documents/IOS_Programming/IOS_Modbus/IOS_Modbus/MainViewController.swift"
+                  timestampString = "474443767.779721"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "38">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IOS_Modbus/MainViewController.swift"
+            timestampString = "474443781.729604"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IOS_Modbus/MainViewController.swift"
+            timestampString = "474443814.368621"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "ViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IOS_Modbus.ViewController.imvLED16.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIImageView&gt;"
+                  moduleName = "IOS_Modbus"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/waltermarchewka/Documents/IOS_Programming/IOS_Modbus/IOS_Modbus/MainViewController.swift"
+                  timestampString = "474443820.401667"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IOS_Modbus.ViewController.imvLED16.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIImageView&gt;"
+                  moduleName = "IOS_Modbus"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/waltermarchewka/Documents/IOS_Programming/IOS_Modbus/IOS_Modbus/MainViewController.swift"
+                  timestampString = "474443820.401853"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IOS_Modbus.ViewController.imvLED16.materializeForSet : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIImageView&gt;"
+                  moduleName = "IOS_Modbus"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/waltermarchewka/Documents/IOS_Programming/IOS_Modbus/IOS_Modbus/MainViewController.swift"
+                  timestampString = "474443820.402061"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IOS_Modbus.ViewController.init (IOS_Modbus.ViewController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; IOS_Modbus.ViewController"
+                  moduleName = "IOS_Modbus"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/waltermarchewka/Documents/IOS_Programming/IOS_Modbus/IOS_Modbus/MainViewController.swift"
+                  timestampString = "474443820.402383"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "1801">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IOS_Modbus/MainViewController.swift"
+            timestampString = "474443832.76808"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "ViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IOS_Modbus.ViewController.stream1.getter : IOS_Modbus.StreamClass"
+                  moduleName = "IOS_Modbus"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/waltermarchewka/Documents/IOS_Programming/IOS_Modbus/IOS_Modbus/MainViewController.swift"
+                  timestampString = "474443837.209013"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IOS_Modbus.ViewController.stream1.setter : IOS_Modbus.StreamClass"
+                  moduleName = "IOS_Modbus"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/waltermarchewka/Documents/IOS_Programming/IOS_Modbus/IOS_Modbus/MainViewController.swift"
+                  timestampString = "474443837.20923"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IOS_Modbus.ViewController.stream1.materializeForSet : IOS_Modbus.StreamClass"
+                  moduleName = "IOS_Modbus"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/waltermarchewka/Documents/IOS_Programming/IOS_Modbus/IOS_Modbus/MainViewController.swift"
+                  timestampString = "474443837.209534"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IOS_Modbus.ViewController.init (IOS_Modbus.ViewController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; IOS_Modbus.ViewController"
+                  moduleName = "IOS_Modbus"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/waltermarchewka/Documents/IOS_Programming/IOS_Modbus/IOS_Modbus/MainViewController.swift"
+                  timestampString = "474443837.209836"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "1978">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
