@@ -9,31 +9,31 @@
 
 import UIKit
 
-protocol DestinationViewDelegate {
+protocol SettingsViewDelegate {
     func setIPAddress(ipAddress: String);
+    
     func setAwake(Awake: Bool);
 }
 
-
-
 class SettingsViewController: UIViewController{
-    
-    var delegate : DestinationViewDelegate! = nil
+
+    var delegate : SettingsViewDelegate! = nil
     var ipAddressText : String! = nil
     var awake : Bool! = nil
-    
+
     @IBOutlet weak var txtIPAddress: UITextField!
     @IBOutlet weak var StayAwake: UISwitch!
-   
+
     override func viewDidLoad() {
         super.viewDidLoad()
         txtIPAddress.text=ipAddressText
         StayAwake.on = awake
-    }
+
+        }
+
+
   
-    
-  
-    // Sets the color on the delegate (StartViewController) and then pops to the root view
+      // Sets the ip address delegate (MainViewController) and then pops to the root view
     @IBAction func ipChanged(sender: UITextField) {
         if let name = sender.text {
             delegate.setIPAddress(name)
@@ -45,6 +45,6 @@ class SettingsViewController: UIViewController{
     
     @IBAction func setAwakeChanged(sender: UISwitch) {
             delegate.setAwake(sender.on)
-            self.navigationController?.popToRootViewControllerAnimated(true)
+            //self.navigationController?.popToRootViewControllerAnimated(true)
         }
 }

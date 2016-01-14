@@ -8,7 +8,7 @@
 
 import UIKit
 
-var myViewController: ViewController!
+//var myViewController: ViewController!
 
 
 @UIApplicationMain

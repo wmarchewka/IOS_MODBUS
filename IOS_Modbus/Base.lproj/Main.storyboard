@@ -60,7 +60,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Teo-aR-WGI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1636.5" y="685.5"/>
+            <point key="canvasLocation" x="1636.5" y="689.5"/>
         </scene>
         <!--Graphics View Controller-->
         <scene sceneID="aXD-2r-3GM">
@@ -74,30 +74,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="00u-Jo-brd">
-                                <rect key="frame" x="25" y="133" width="324" height="444"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="NodeMCU" translatesAutoresizingMaskIntoConstraints="NO" id="azY-YM-ZXd">
+                                <rect key="frame" x="87" y="67" width="200" height="600"/>
                             </imageView>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TIB-eg-9s9">
-                                <rect key="frame" x="163" y="616" width="51" height="31"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i8I-6s-yn6">
+                                <rect key="frame" x="148" y="622" width="20" height="20"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YT0-Ny-Pxa">
+                                <rect key="frame" x="13" y="103" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VzW-4X-VNi">
+                                <rect key="frame" x="306" y="606" width="51" height="31"/>
                                 <connections>
-                                    <action selector="setTestButtonChanged:" destination="gSO-1t-fSD" eventType="valueChanged" id="hyh-W9-tWX"/>
+                                    <action selector="TestSwitchPushed:" destination="gSO-1t-fSD" eventType="valueChanged" id="zkl-0r-Kb1"/>
                                 </connections>
                             </switch>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ovz-PZ-FyQ">
+                                <rect key="frame" x="312" y="548" width="40" height="30"/>
+                                <state key="normal" title="SEND"/>
+                                <connections>
+                                    <action selector="SendButtonPushed:" destination="gSO-1t-fSD" eventType="touchDown" id="lK1-Xz-syA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="imageView" destination="00u-Jo-brd" id="uJs-ze-IQx"/>
+                        <outlet property="LED16" destination="i8I-6s-yn6" id="Tn2-2Q-5c0"/>
+                        <outlet property="button_Send" destination="ovz-PZ-FyQ" id="PY9-Qk-xg8"/>
+                        <outlet property="lblTimerData" destination="YT0-Ny-Pxa" id="rgg-dW-vzm"/>
+                        <outlet property="switchTest" destination="VzW-4X-VNi" id="sr4-1O-V2D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Y5-tO-QBd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2290.5" y="664.5"/>
         </scene>
-        <!--Main View Controller-->
+        <!--ViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" userLabel="Main View Controller" customClass="ViewController" customModule="IOS_Modbus" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="ViewController" customClass="ViewController" customModule="IOS_Modbus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -107,7 +126,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3O-25-Q8c" userLabel="Error Label">
-                                <rect key="frame" x="59" y="341" width="246" height="23"/>
+                                <rect key="frame" x="91" y="402" width="176" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -116,42 +135,59 @@
                                 <state key="normal" title="Write Registers"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jbn-lK-cCK" userLabel="Read Register Button">
-                                <rect key="frame" x="117" y="177" width="114" height="38"/>
+                                <rect key="frame" x="231" y="218" width="114" height="38"/>
                                 <state key="normal" title="Read Register"/>
                                 <connections>
                                     <action selector="readRegister:" destination="BYZ-38-t0r" eventType="touchDown" id="Ydh-Hu-oYy"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMe-Vy-FkN">
-                                <rect key="frame" x="113" y="111" width="114" height="38"/>
-                                <state key="normal" title="Write Register"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Vq-v9-e27" userLabel="Read Register Button">
+                                <rect key="frame" x="246" y="391" width="114" height="38"/>
+                                <state key="normal" title="CLEAR"/>
                                 <connections>
-                                    <action selector="sendRegister:" destination="BYZ-38-t0r" eventType="touchDown" id="OcY-XN-t5R"/>
+                                    <action selector="clearlogButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cWo-sT-tA3"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0aT-g9-jRq">
-                                <rect key="frame" x="12" y="182" width="97" height="30"/>
+                                <rect key="frame" x="9" y="226" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MrX-1K-xbM">
-                                <rect key="frame" x="8" y="119" width="97" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MrX-1K-xbM" userLabel="Write Register Start Reg">
+                                <rect key="frame" x="9" y="128" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="8" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Joa-JS-aP2">
-                                <rect key="frame" x="117" y="219" width="239" height="30"/>
+                                <rect key="frame" x="121" y="264" width="239" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Read Register Start" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8kh-IX-laq">
-                                <rect key="frame" x="12" y="163" width="106" height="21"/>
+                                <rect key="frame" x="7" y="208" width="106" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bVv-eU-7JC">
+                                <rect key="frame" x="119" y="226" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number of Registers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XT4-kU-zAD">
+                                <rect key="frame" x="117" y="208" width="106" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Write Register Start" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="abr-LC-z2T">
-                                <rect key="frame" x="8" y="98" width="106" height="21"/>
+                                <rect key="frame" x="7" y="106" width="106" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Write Register Value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rj7-aV-2zh">
+                                <rect key="frame" x="8" y="157" width="106" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -163,51 +199,30 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ERROR DATA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coz-m4-Xf7">
-                                <rect key="frame" x="116" y="312" width="106" height="21"/>
+                                <rect key="frame" x="122" y="373" width="106" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="myq-PK-C2z">
-                                <rect key="frame" x="8" y="403" width="359" height="206"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <gestureRecognizers/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x77-nf-ybM">
                                 <rect key="frame" x="7" y="42" width="360" height="22"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LSE-mo-daB">
-                                <rect key="frame" x="62" y="363" width="114" height="38"/>
-                                <state key="normal" title="Close conn"/>
-                                <connections>
-                                    <action selector="closeConnection:" destination="BYZ-38-t0r" eventType="touchDown" id="V4l-G7-iwd"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JPc-Rc-B0e">
-                                <rect key="frame" x="11" y="266" width="114" height="38"/>
-                                <state key="normal" title="Write Coil"/>
-                                <connections>
-                                    <action selector="writeSingleCoil:" destination="BYZ-38-t0r" eventType="touchDown" id="mwg-cr-DVx"/>
-                                </connections>
-                            </button>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="YQ6-hp-40W">
-                                <rect key="frame" x="133" y="270" width="94" height="29"/>
+                                <rect key="frame" x="134" y="335" width="94" height="29"/>
                                 <connections>
                                     <action selector="coilRegisterChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="9P3-BV-jPX"/>
                                 </connections>
                             </stepper>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A3s-D6-qZp">
-                                <rect key="frame" x="240" y="269" width="37" height="30"/>
+                                <rect key="frame" x="246" y="335" width="37" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7eK-yf-XKx">
-                                <rect key="frame" x="300" y="268" width="51" height="31"/>
+                                <rect key="frame" x="300" y="334" width="51" height="31"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="STATUS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5s-tB-xGr">
                                 <rect key="frame" x="134" y="20" width="106" height="21"/>
@@ -221,27 +236,33 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12345678" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3L-lH-fq7" userLabel="ID Label">
+                                <rect key="frame" x="176" y="69" width="77" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Signal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Gn-bH-WnR">
                                 <rect key="frame" x="9" y="84" width="49" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wpY-os-bHn">
-                                <rect key="frame" x="62" y="84" width="20" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wpY-os-bHn">
+                                <rect key="frame" x="62" y="84" width="33" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i9A-9h-n4w">
-                                <rect key="frame" x="52" y="617" width="57" height="30"/>
-                                <state key="normal" title="Settings"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i9A-9h-n4w" userLabel="SettingsView">
+                                <rect key="frame" x="20" y="617" width="108" height="30"/>
+                                <state key="normal" title="SettingsView"/>
                                 <connections>
                                     <segue destination="G5R-PP-Jct" kind="show" identifier="showSettingsViewController" id="sJU-0q-QiR"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="IP Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XXC-Sw-Ln8">
-                                <rect key="frame" x="159" y="81" width="134" height="21"/>
+                                <rect key="frame" x="157" y="92" width="134" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -252,27 +273,114 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="utY-Ia-Xbg">
-                                <rect key="frame" x="53" y="220" width="51" height="31"/>
-                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="udY-Ai-i3M">
+                                <rect key="frame" x="146" y="69" width="22" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AUTO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YTI-gb-4BH">
-                                <rect key="frame" x="3" y="223" width="42" height="21"/>
+                                <rect key="frame" x="7" y="268" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BML-RJ-u3o">
-                                <rect key="frame" x="191" y="363" width="114" height="38"/>
-                                <state key="normal" title="Open conn"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tvz-1v-9km" userLabel="Graphics">
+                                <rect key="frame" x="243" y="617" width="112" height="30"/>
+                                <state key="normal" title="GraphicsView"/>
                                 <connections>
-                                    <action selector="openConnection:" destination="BYZ-38-t0r" eventType="touchDown" id="iWN-EI-0Al"/>
+                                    <segue destination="gSO-1t-fSD" kind="show" identifier="showGraphicsViewController" id="qEE-mF-K3Q"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tvz-1v-9km">
-                                <rect key="frame" x="251" y="617" width="68" height="30"/>
-                                <state key="normal" title="Data view"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SendCounter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xmr-Ee-aql">
+                                <rect key="frame" x="266" y="92" width="101" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0J8-oI-gbq" userLabel="Write Register Value">
+                                <rect key="frame" x="7" y="175" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tVh-4k-jbf">
+                                <rect key="frame" x="22" y="303" width="73" height="30"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <segue destination="gSO-1t-fSD" kind="show" id="qEE-mF-K3Q"/>
+                                    <action selector="AutoPollTimeChanged:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="rjP-ay-FDW"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8x-od-V69">
+                                <rect key="frame" x="214" y="156" width="78" height="30"/>
+                                <state key="normal" title="DEBUG ON"/>
+                                <connections>
+                                    <action selector="txtDebugOnPushed:" destination="BYZ-38-t0r" eventType="touchDown" id="D2f-x4-sEi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hI3-of-wlZ">
+                                <rect key="frame" x="214" y="156" width="83" height="30"/>
+                                <state key="normal" title="DEBUG OFF"/>
+                                <connections>
+                                    <action selector="txtDebugOffPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1YX-Fb-OCC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yov-00-ir2">
+                                <rect key="frame" x="138" y="157" width="65" height="30"/>
+                                <state key="normal" title="UPDATE"/>
+                                <connections>
+                                    <action selector="txtUpdatePushed:" destination="BYZ-38-t0r" eventType="touchDown" id="WwS-Y9-Crv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dyr-XJ-w9X">
+                                <rect key="frame" x="140" y="184" width="60" height="30"/>
+                                <state key="normal" title="REBOOT"/>
+                                <connections>
+                                    <action selector="RebootPushed:" destination="BYZ-38-t0r" eventType="touchDown" id="EXb-K7-Veq"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="myq-PK-C2z">
+                                <rect key="frame" x="9" y="424" width="359" height="185"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a5M-XY-YAR">
+                                <rect key="frame" x="248" y="184" width="81" height="30"/>
+                                <state key="normal" title="RegisterDef"/>
+                                <connections>
+                                    <action selector="registerDefButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4oU-NG-d1S"/>
+                                </connections>
+                            </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="utY-Ia-Xbg">
+                                <rect key="frame" x="57" y="264" width="51" height="31"/>
+                                <connections>
+                                    <action selector="AutoSendButtonToggled:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="deO-iJ-gBP"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CH6-2o-moR">
+                                <rect key="frame" x="20" y="20" width="51" height="31"/>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hyb-FL-hPH">
+                                <rect key="frame" x="16" y="377" width="51" height="31"/>
+                            </switch>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dgK-Ju-E1f">
+                                <rect key="frame" x="337" y="157" width="20" height="20"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JPc-Rc-B0e">
+                                <rect key="frame" x="23" y="341" width="77" height="28"/>
+                                <state key="normal" title="Write Coil"/>
+                                <connections>
+                                    <action selector="writeSingleCoil:" destination="BYZ-38-t0r" eventType="touchDown" id="mwg-cr-DVx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMe-Vy-FkN" userLabel="WriteRegisterButton">
+                                <rect key="frame" x="113" y="111" width="114" height="38"/>
+                                <state key="normal" title="Write Register"/>
+                                <connections>
+                                    <action selector="writeRegister:" destination="BYZ-38-t0r" eventType="valueChanged" id="cYU-GA-CGC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -285,20 +393,30 @@
                     <connections>
                         <outlet property="BatteryVoltageLabel" destination="5kh-Cn-Uz3" id="uQ7-hA-e1R"/>
                         <outlet property="CoilRegisterStepper" destination="YQ6-hp-40W" id="Pd6-9g-THD"/>
+                        <outlet property="IdLabel" destination="d3L-lH-fq7" id="PI9-vz-ijE"/>
+                        <outlet property="LED16" destination="dgK-Ju-E1f" id="9oE-xf-UyO"/>
+                        <outlet property="SendCounter" destination="xmr-Ee-aql" id="6UL-HP-Z72"/>
                         <outlet property="autoPollButton" destination="utY-Ia-Xbg" id="8m9-fe-qo8"/>
-                        <outlet property="connectButton" destination="BML-RJ-u3o" id="WAT-my-npy"/>
+                        <outlet property="clearLogButton" destination="0Vq-v9-e27" id="vIx-VM-q77"/>
                         <outlet property="connectedLabel" destination="x77-nf-ybM" id="5IU-Xk-iWI"/>
-                        <outlet property="disconnectButton" destination="LSE-mo-daB" id="ZXp-uV-Xhx"/>
                         <outlet property="errorLabel" destination="H3O-25-Q8c" id="TMm-F2-K2l"/>
                         <outlet property="readRegisterButton" destination="jbn-lK-cCK" id="n8g-CM-LDj"/>
+                        <outlet property="rebootButton" destination="Dyr-XJ-w9X" id="0cv-JT-URH"/>
+                        <outlet property="registerDefButton" destination="a5M-XY-YAR" id="29m-ff-Sdi"/>
                         <outlet property="rssiSignalLabel" destination="wpY-os-bHn" id="ojZ-8g-cqD"/>
                         <outlet property="switchCoilValue" destination="7eK-yf-XKx" id="Vtd-Mz-4n8"/>
+                        <outlet property="txtAutoPollTime" destination="tVh-4k-jbf" id="sEx-qd-5IO"/>
                         <outlet property="txtCoilRegister" destination="A3s-D6-qZp" id="zi2-nt-28c"/>
+                        <outlet property="txtDebugON" destination="H8x-od-V69" id="wju-5I-Dc3"/>
+                        <outlet property="txtDebugOff" destination="hI3-of-wlZ" id="s2m-fD-k8P"/>
                         <outlet property="txtIPAddress" destination="XXC-Sw-Ln8" id="dFx-7s-ihO"/>
+                        <outlet property="txtNumberofReadRegisters" destination="bVv-eU-7JC" id="7h3-0M-OHY"/>
                         <outlet property="txtReadRegister" destination="0aT-g9-jRq" id="7hS-g1-tVo"/>
                         <outlet property="txtReturnRegisters" destination="Joa-JS-aP2" id="117-eq-7Y0"/>
+                        <outlet property="txtUpdateButton" destination="yov-00-ir2" id="jlb-Au-Vh7"/>
                         <outlet property="txtViewError" destination="myq-PK-C2z" id="OVB-yW-T37"/>
-                        <outlet property="txtWriteRegister" destination="MrX-1K-xbM" id="fzc-U2-8gg"/>
+                        <outlet property="txtWriteRegister" destination="MrX-1K-xbM" id="5r6-D2-0iL"/>
+                        <outlet property="txtWriteRegisterValue" destination="0J8-oI-gbq" id="ZCC-dL-NWH"/>
                         <outlet property="writeCoilButton" destination="JPc-Rc-B0e" id="Gnb-tE-A1m"/>
                         <outlet property="writeRegisterButton" destination="gMe-Vy-FkN" id="YiI-F1-eni"/>
                         <outlet property="writeRegistersButton" destination="Twu-De-i22" id="F5s-Wl-JVl"/>
@@ -306,7 +424,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2083.5" y="-222.5"/>
+            <point key="canvasLocation" x="2051.5" y="-222.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Guj-3Q-6qZ">
@@ -327,4 +445,7 @@
             <point key="canvasLocation" x="1491" y="-222"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="NodeMCU" width="124" height="429"/>
+    </resources>
 </document>
