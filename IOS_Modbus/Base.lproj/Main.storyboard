@@ -192,7 +192,7 @@
                                 <rect key="frame" x="23" y="341" width="77" height="28"/>
                                 <state key="normal" title="Write Coil"/>
                                 <connections>
-                                    <action selector="IB_writeSingleCoil:" destination="BYZ-38-t0r" eventType="valueChanged" id="2uy-p6-UEe"/>
+                                    <action selector="IB_writeSingleCoil:" destination="BYZ-38-t0r" eventType="touchDown" id="Mwf-7n-VG6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Twu-De-i22" userLabel="WriteRegister">
@@ -357,7 +357,7 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="utY-Ia-Xbg" userLabel="AutoSend">
                                 <rect key="frame" x="57" y="264" width="51" height="31"/>
                                 <connections>
-                                    <action selector="IB_AutoSendButtonToggled:" destination="BYZ-38-t0r" eventType="valueChanged" id="EgF-Lb-BEz"/>
+                                    <action selector="IB_AutoSendSwitchToggled:" destination="BYZ-38-t0r" eventType="valueChanged" id="eL5-gA-M1s"/>
                                 </connections>
                             </switch>
                         </subviews>

@@ -7,8 +7,8 @@
 //
 import Foundation
 
-let READ_COIL_STATUS:UInt8 = 01
-let READ_INPUT_STATUS:UInt8 = 02
+let Read_Coil_Status:UInt8 = 01
+let Read_Input_Status:UInt8 = 02
 let READ_HOLDING_REGISTERS:UInt8 = 03
 let READ_INPUT_REGISTERS:UInt8 = 04
 let WRITE_SINGLE_COIL:UInt8 = 05
@@ -33,16 +33,18 @@ var glbOkToFire = true
 var glbOutgoingBytes:[UInt8] = []
 
 
+
 class StreamClass: NSObject, NSStreamDelegate {
 
+
+    private var dataReadCallback:((dataReceived:ArraySlice<UInt8>)->Void)?
+  
     let serverAddress: String = "10.0.0.202"
     let serverPort: Int = 502
     var RTS: Bool = true
     var inputStream: NSInputStream?
     var outputStream: NSOutputStream?
-    private var dataReadCallback:((dataReceived:ArraySlice<UInt8>)->Void)?
     var SendTimeoutTimer = NSTimer()
-
     struct outgoing_queue_t {
         var UnitID:UInt8 = 0x00
         var FunctionCode:UInt8 = 0x00
@@ -51,7 +53,6 @@ class StreamClass: NSObject, NSStreamDelegate {
         var dataRegisters:[UInt16]? = [UInt16](count:512, repeatedValue:0)
     }
     var outgoingQueue = [outgoing_queue_t]()
-
     struct registerDef_t {
         var regnum:UInt16 = 0
         var EEreg:UInt16 = 0
@@ -72,32 +73,18 @@ class StreamClass: NSObject, NSStreamDelegate {
         NSLog("Class init")
     }
 
-    func AutoSend() {
-        NSLog("Auto send timer fired")
-        outgoingQueue.append(StreamClass.outgoing_queue_t(
-            UnitID: 1,
-            FunctionCode: READ_HOLDING_REGISTERS,
-            DataAddress:23,
-            NumberofRegisters: 2,
-            dataRegisters: []))
-        Process_Outgoing_Queue()
-    }
-
-    func SetupTimers(value:Double) {
-        NSLog("Auto send timer started with interval \(value)")
+    func OutgoingQueueProcessTimer(value:Double) {
+        NSLog("Outgoing Queue proces timer started with interval \(value)")
         Timer = NSTimer.scheduledTimerWithTimeInterval(value,
             target: self,
-            selector: "AutoSend",
+            selector: "OutgoingQueueProcess",
             userInfo: nil,
             repeats: true)
+        glbOkToFire=true
+        NSLog("OK to fire set to true")
     }
 
-    func StopAutoSendTimer(){
-        Timer.invalidate()
-    }
-
-
-    func connectSocket() {
+    func SocketConnect() {
         NSStream.getStreamsToHostWithName(self.serverAddress,
             port: self.serverPort,
             inputStream: &self.inputStream,
@@ -125,23 +112,19 @@ class StreamClass: NSObject, NSStreamDelegate {
         }
     }
 
-
-    func addToOutgoingQueue(inout data: outgoing_queue_t){
+    func OutgoingQueueAdd(inout data: outgoing_queue_t){
         outgoingQueue.append(data)
+        NSLog("packet added to outgoing queue")
     }
 
-
     func SendData(word:[UInt8]) -> Int{
-        //RTS=true
-        //if (RTS) {
         NSLog("Attempting to send data")
         let data:NSData = NSData(bytes: word, length: word.count)
         let bytesWritten:Int = self.outputStream!.write(UnsafePointer(data.bytes), maxLength: data.length)
-        RTS=false
         return bytesWritten
     }
 
-    func read()  {
+    func ReadData()  {
         NSLog("Data available")
         var buffer = [UInt8](count: 1024, repeatedValue: 0)
         let len = self.inputStream!.read(&buffer, maxLength: buffer.count)
@@ -152,51 +135,49 @@ class StreamClass: NSObject, NSStreamDelegate {
         NSLog (inputAsString)
         NSLog("Setting OK to fire to true")
         glbOkToFire=true
-        onDataReceived(input)
-    }
-
-    func onDataReceived(dataReceived:ArraySlice<UInt8>) {
-        NSLog("On data received is running")
-        //self.SendCounter.text=String(glbSendPacketCounter)
-        //self.SendCounter.text=String(glbSendPacketCounter)
-        //self.stream1.CloseSocket()
-        //self.txtViewError.text = String(dataReceived)
-
         //TODO MAKE SURE THESE POINT TO THE RIGHT PLACE.
         //MAY CHANGED DEPENDING ON RETURN DATA FUNTION CODE
-        let tmpStartRegister:UInt16 = UInt16(dataReceived[10])
-        let tmpNumberOfRegisters:UInt16 = UInt16(dataReceived[11])
-
-        switch dataReceived[7] {                                            //return packet function code
+        self.dataReadCallback!(dataReceived:input)
+        let tmpStartRegister:UInt16 = UInt16(input[10])
+        let tmpNumberOfRegisters:UInt16 = UInt16(input[11])
+        let returnFunctionCode = input[7]
+        switch returnFunctionCode {                                            //return packet function code
 
         case 3:
             NSLog("Parsing needed of read holding registers")
-            self.parseReadReturnData(dataReceived,
+            ParseReadReturnData(input,
                 start: tmpStartRegister,
                 numberOfRegister: tmpNumberOfRegisters)
 
-        case 5:                                                             //write single coil
+        case 5:
+            //write single coil
             NSLog("No parsing needed of write single coil incoming data")
 
-        case 6:                                                             //write single coil
+        case 6:
             NSLog("No parsing needed of write register(s) incoming data")
 
         default:
             NSLog("Parse return data error")
 
         }
+        SocketClose()
     }
 
+    func onDataReceived(dataReadCallback:((dataReceived:ArraySlice<UInt8>) -> Void)) {
+        NSLog("Callback established")
+        self.dataReadCallback = dataReadCallback
+    }
 
-    func parseReadReturnData(var data:ArraySlice<UInt8>, start:UInt16, numberOfRegister:UInt16) {
+    func ParseReadReturnData(var data:ArraySlice<UInt8>, start:UInt16, numberOfRegister:UInt16) {
         NSLog("Parsing read return data")
-        var wordData:[UInt16] = [UInt16](count:data.count / 2, repeatedValue:0)
+
         let glbSizeOfSingleRegisterDef = 15
         //first convert byte data to word data
+        var wordData:[UInt16] = [UInt16](count:data.count / 2, repeatedValue:0)
         for var tmpRegister=0;tmpRegister < (data.count) / 2; tmpRegister++ {
             wordData[tmpRegister]=UInt16(data[tmpRegister*2])*256 + UInt16(data[tmpRegister*2+1])
         }
-        //remove 10 header bytes
+        //remove 10 header bytes only leaving the data
         wordData[0...4] = []
         for var register=0;register < (wordData.count); register++ {
             let actualRegister = Int(start) + Int(register)
@@ -292,14 +273,11 @@ class StreamClass: NSObject, NSStreamDelegate {
 
             default:
                 break
-                //NSLog("Not found \(actualRegister)")
-
             }
         }
     }
 
-
-    func CloseSocket() {
+    func SocketClose() {
         glbConnectionOpen=false
         NSLog("glbConnection set to false")
         NSLog("Closing")
@@ -314,7 +292,7 @@ class StreamClass: NSObject, NSStreamDelegate {
 
     func ConnectionFailed() {
         NSLog("Connection failed")
-        CloseSocket()
+        SocketClose()
         //autoPollButton.on=false
         glbConnectionOpen=false
         NSLog("glbConnectionOpen set to false")
@@ -340,7 +318,7 @@ class StreamClass: NSObject, NSStreamDelegate {
             if (aStream == inputStream){
                 NSLog("Data arrived \(aStream)")
                 if (inputStream!.hasBytesAvailable){
-                    self.read()
+                    self.ReadData()
                 }
             }
             break
@@ -376,11 +354,7 @@ class StreamClass: NSObject, NSStreamDelegate {
         }
     }
 
-    func Process_Outgoing_Queue(){
-
-        //TRANSID_1 TRANSID_2 PROTOCOLID_1 PROTOCOLID_2 PACKETLENGTH UNITID FUNCCODE DATABYTES (1-XX)
-
-        //NSLog("Outgoing queue length \(outgoingQueue.count)")
+    func OutgoingQueueProcess(){
 
         if ( (outgoingQueue.count>0) && (glbOkToFire) ) {
             glbOkToFire=false
@@ -452,7 +426,7 @@ class StreamClass: NSObject, NSStreamDelegate {
             NSLog("Data placed in glbOutgoingData")
             glbRTS=true
             NSLog("glbRTS set to true")
-            connectSocket()
+            SocketConnect()
         }
-     }
+    }
 }

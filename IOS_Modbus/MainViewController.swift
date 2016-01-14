@@ -30,13 +30,7 @@ import UIKit
 class ViewController: UIViewController, SettingsViewDelegate, GraphicsViewDelegate {
 
     var glbIpAddress = "10.0.0.202"
-    var glbSendError = false
     var log = ""
-
-    var sendPacketCounter=0
-    var glbTimerCounter = 0
-    var testCounter = 0
-
 
     @IBOutlet weak var lblBatteryVoltageVal: UILabel!
     @IBOutlet weak var lblErrorVal: UILabel!
@@ -77,6 +71,7 @@ class ViewController: UIViewController, SettingsViewDelegate, GraphicsViewDelega
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        stream1.OutgoingQueueProcessTimer(0.100)
         LC_SetupViewUI()
     }
 
@@ -111,7 +106,7 @@ class ViewController: UIViewController, SettingsViewDelegate, GraphicsViewDelega
 
     @IBAction func IB_registerDefButtonPushed(sender: AnyObject) {
         NSLog("Get Register Def pushed")
-        stream1.outgoingQueue.append(StreamClass.outgoing_queue_t(
+        LC_Outgoing_Queue_Add(StreamClass.outgoing_queue_t(
             UnitID: 1,
             FunctionCode: READ_HOLDING_REGISTERS,
             DataAddress:200,
@@ -119,7 +114,7 @@ class ViewController: UIViewController, SettingsViewDelegate, GraphicsViewDelega
             dataRegisters: []))
         NSLog("packet added to outgoing queue")
 
-        stream1.outgoingQueue.append(StreamClass.outgoing_queue_t(
+        LC_Outgoing_Queue_Add(StreamClass.outgoing_queue_t(
             UnitID: 1,
             FunctionCode: READ_HOLDING_REGISTERS,
             DataAddress:425,
@@ -139,29 +134,25 @@ class ViewController: UIViewController, SettingsViewDelegate, GraphicsViewDelega
         //writeSingleCoil(21,DataByte: 0xff00)
     }
 
-    @IBAction func IB_AutoSendButtonToggled(sender: AnyObject) {
-        LC_AutoSendButtonPushed(switchAutoPoll.on)
+    @IBAction func IB_AutoSendSwitchToggled(sender: UISwitch) {
+        if sender.on == false {
+        NSLog("Auto poll button is off")
+        AutoSendTimerStop()
+        }
+        else{
+            NSLog("Auto poll button is on")
+            AutoSendTimerStart(2.000)
+        }
+    }
+
+    @IBAction func IB_AutoPollTimeChanged(sender: AnyObject) {
+        let newTime=(Double(txtAutoPollTime.text!)!)/1000
+        AutoSendTimerChangeTime(newTime)
     }
 
     @IBAction func IB_UpdatePushed(sender: AnyObject) {
         NSLog("OTA update button pushed")
         //writeSingleCoil(20,DataByte: 0xff00)
-    }
-
-    @IBAction func IB_AutoPollTimeChanged(sender: AnyObject) {
-        stream1.StopAutoSendTimer()
-        NSLog("Auto send timer killed")
-        glbOkToFire=false
-        NSLog("OK to fire is false")
-        switchAutoPoll.on=false
-        NSLog("Auto poll button is false")
-        NSLog("Autopoll time changed")
-        let newTime=(Double(txtAutoPollTime.text!)!)/1000
-        stream1.SetupTimers(newTime)
-        glbOkToFire=true
-        NSLog("OK to fire set to true")
-        switchAutoPoll.on=true
-        NSLog("Auto poll button is true")
     }
 
     @IBAction func IB_writeSingleCoil(sender : UIButton) {
@@ -174,7 +165,7 @@ class ViewController: UIViewController, SettingsViewDelegate, GraphicsViewDelega
             tmpDataRegisters.append(0x0000)
         }
         NSLog("Write single coil to address \(DataAddress) value of \(tmpDataRegisters)")
-        stream1.outgoingQueue.append(StreamClass.outgoing_queue_t(
+        LC_Outgoing_Queue_Add(StreamClass.outgoing_queue_t(
             UnitID: 1,
             FunctionCode: 5,
             DataAddress:DataAddress,
@@ -196,13 +187,12 @@ class ViewController: UIViewController, SettingsViewDelegate, GraphicsViewDelega
         let NumberOfRegisters:UInt16 = 1
         NSLog("Write register pushed")
         NSLog("Write register to address \(DataAddress) value of \(tmpValue)")
-        stream1.outgoingQueue.append(StreamClass.outgoing_queue_t(
+        LC_Outgoing_Queue_Add(StreamClass.outgoing_queue_t(
             UnitID: 1,
             FunctionCode:6,
             DataAddress:DataAddress,
             NumberofRegisters: NumberOfRegisters,
             dataRegisters: tmpDataRegisters))
-        NSLog("packet added to outgoing queue")
     }
 
     @IBAction func IB_readRegister(sender : AnyObject?) {
@@ -211,7 +201,7 @@ class ViewController: UIViewController, SettingsViewDelegate, GraphicsViewDelega
 
         NSLog("Read register pushed")
         NSLog("Read from address \(tmpDataAddressStart) for \(tmpNumberofReadRegisters) registers")
-        stream1.outgoingQueue.append(StreamClass.outgoing_queue_t(
+        LC_Outgoing_Queue_Add(StreamClass.outgoing_queue_t(
             UnitID: 1,
             FunctionCode: 3,
             DataAddress:tmpDataAddressStart,
@@ -242,24 +232,6 @@ class ViewController: UIViewController, SettingsViewDelegate, GraphicsViewDelega
         UIApplication.sharedApplication().idleTimerDisabled = Awake
     }
 
-    func LC_AutoSendButtonPushed(state: Bool ) {
-        if state==false {
-            NSLog("Auto poll button is off")
-            stream1.StopAutoSendTimer()
-            NSLog("Auto send timer terminated")
-            glbOkToFire=false
-            NSLog("OK to fire set to false")
-            switchAutoPoll.on=false
-        }
-        else{
-            NSLog("Auto poll button is on")
-            stream1.SetupTimers(0.100)
-            glbOkToFire=true
-            NSLog("OK to fire set to true")
-            switchAutoPoll.on=true
-        }
-    }
-
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?){
         NSLog("Touches began")
         view.endEditing(true)
@@ -271,7 +243,60 @@ class ViewController: UIViewController, SettingsViewDelegate, GraphicsViewDelega
         // Dispose of any resources that can be recreated.
     }
 
- 
+    func LC_Outgoing_Queue_Add(data:StreamClass.outgoing_queue_t){
+        stream1.outgoingQueue.append(data)
+        NSLog("packet added to outgoing queue")
+        stream1.onDataReceived { (dataReceived) -> Void in
+            NSLog("data received \(dataReceived)")
+            NSLog("Data callback received")
+            self.lblSendCounterVal.text=String(glbSendPacketCounter)
+            //self.txtViewError.text = String(dataReceived)
+        }
+    }
+
+    func AutoSend() {
+        LC_Outgoing_Queue_Add(StreamClass.outgoing_queue_t(
+            UnitID: 1,
+            FunctionCode: READ_HOLDING_REGISTERS,
+            DataAddress:23,
+            NumberofRegisters: 2,
+            dataRegisters: []))
+    }
+
+    func AutoSendTimerStart(value:Double) {
+        NSLog("Auto send timer started with interval \(value)")
+        Timer = NSTimer.scheduledTimerWithTimeInterval(value,
+            target: self,
+            selector: "AutoSend",
+            userInfo: nil,
+            repeats: true)
+        glbOkToFire=true
+        NSLog("OK to fire set to true")
+    }
+
+    func AutoSendTimerStop(){
+        NSLog("Auto send timer terminated")
+        Timer.invalidate()
+        glbOkToFire=false
+        NSLog("OK to fire set to false")
+    }
+
+    func AutoSendTimerChangeTime(newTime:Double){
+        AutoSendTimerStop()
+        NSLog("Auto send timer killed")
+        glbOkToFire=false
+        NSLog("OK to fire is false")
+        //switchAutoPoll.on=false
+        NSLog("Auto poll button is false")
+        NSLog("Autopoll time changed")
+        AutoSendTimerStart(newTime)
+        glbOkToFire=true
+        NSLog("OK to fire set to true")
+        //switchAutoPoll.on=true
+        NSLog("Auto poll button is true")
+    }
+
+
     func LC_SetupViewUI(){
 
         txtWriteRegister.text="5"
